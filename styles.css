@@ -1,0 +1,568 @@
+/* ==========================================================
+   OTHARO — Stylesheet
+   King's College Incubation Center
+   Custom styles (Tailwind config lives in an inline <script>
+   in index.html so the Tailwind CDN can read it).
+   ========================================================== */
+
+/* ------------------------------------------------------------------
+   Typography helpers
+   ------------------------------------------------------------------ */
+.font-condensed {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.04em;
+}
+
+/* ------------------------------------------------------------------
+   Marquee animations (continuous logo ticker)
+   ------------------------------------------------------------------ */
+@keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-reverse {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0%); }
+}
+
+.animate-marquee {
+    display: flex;
+    width: max-content;
+    animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+    animation-play-state: paused;
+}
+
+.animate-marquee-rev {
+    display: flex;
+    width: max-content;
+    animation: marquee-reverse 32s linear infinite;
+}
+
+.animate-marquee-rev:hover {
+    animation-play-state: paused;
+}
+
+/* ------------------------------------------------------------------
+   Navbar: transparent over the hero video, white after scrolling past it
+   ------------------------------------------------------------------ */
+#main-nav {
+    background: transparent;
+    border-bottom: 1px solid transparent;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+#main-nav.nav-solid {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom-color: #e7e5e4;
+    box-shadow: 0 4px 20px -8px rgba(0, 0, 0, 0.15);
+}
+
+/* Keep the mobile toggle & logo readable over the dark video */
+#main-nav:not(.nav-solid) #mobile-menu-btn {
+    color: #ffffff;
+}
+
+/* Third row: slower leftward drift for the 3-row alternating logo wall */
+.animate-marquee-slow {
+    display: flex;
+    width: max-content;
+    animation: marquee 44s linear infinite;
+}
+
+.animate-marquee-slow:hover {
+    animation-play-state: paused;
+}
+
+/* ------------------------------------------------------------------
+   Power Up Your Potential — Scroll-triggered 3-Card Stage
+   Cards arrive in sequence on scroll: Left (tilted left) pins first,
+   then Center pins, then Right (tilted right) pins to form the trio.
+   ------------------------------------------------------------------ */
+
+.power-section {
+    position: relative;
+    height: 250vh; /* Runway for 3-card scroll sequence */
+    background-color: #FCFAF6;
+}
+
+.power-sticky-wrapper {
+    position: sticky;
+    top: 0;
+    min-height: 100vh; /* grows with content so taller cards are never clipped */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    padding: 2rem 0;
+}
+
+.power-header {
+    text-align: center;
+    max-width: 52rem;
+    margin: 0 auto 2.25rem;
+    padding: 0 1rem;
+    z-index: 10;
+}
+
+.power-cards-stage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.25rem;
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    perspective: 1200px;
+}
+
+.power-card-wrap {
+    width: 330px;
+    max-width: 100%;
+    flex-shrink: 0;
+    will-change: transform, opacity;
+    transform-origin: center center;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+/* Hovering one card dims the other two */
+.power-cards-stage:hover .power-card-wrap:not(:hover) {
+    opacity: 0.35 !important; /* overrides the inline opacity set by JS */
+}
+
+/* ── Card Styling (Matches Reference) ── */
+.potential-card {
+    position: relative;
+    background: #FAF3E8;
+    border: 1px solid rgba(225, 214, 196, 0.9);
+    border-radius: 9px;
+    padding: 13px 13px 20px 13px;
+    box-shadow: 0 24px 50px -12px rgba(0, 0, 0, 0.13), 0 3px 10px rgba(0, 0, 0, 0.03);
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.potential-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 32px 65px -15px rgba(0, 0, 0, 0.2), 0 6px 16px rgba(0, 0, 0, 0.05);
+}
+
+.pc-image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 17;
+    border-radius: 2px;
+    overflow: hidden;
+    background: #e6dbcb;
+}
+
+/* Orangish tint mask over the card image */
+.pc-image-wrapper::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(242, 153, 74, 0.45), rgba(224, 122, 30, 0.25));
+    mix-blend-mode: multiply;
+    pointer-events: none;
+}
+
+.pc-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.pc-badge {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: #22C55E;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    padding: 4px 14px;
+    border-radius: 9999px;
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.45);
+    line-height: 1.2;
+}
+
+.pc-content {
+    padding: 14px 6px 4px 6px;
+}
+
+.pc-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.45rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #111827;
+    margin-bottom: 0.45rem;
+    line-height: 1.2;
+}
+
+.pc-desc {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.815rem;
+    line-height: 1.55;
+    color: #4B5563;
+    font-weight: 400;
+}
+
+/* ── Hover actions: stacked buttons on the card's right side ── */
+.pc-actions {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    opacity: 0;
+    transform: translateX(10px);
+    transition: opacity 0.28s ease, transform 0.28s ease;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.power-card-wrap:hover .pc-actions {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+.pc-action {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 9px 18px;
+    border-radius: 9999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    box-shadow: 0 6px 16px -4px rgba(17, 24, 39, 0.28);
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pc-action:hover {
+    transform: translateX(-2px);
+}
+
+.pc-action-primary {
+    background: #F2994A;
+    color: #ffffff;
+}
+
+.pc-action-primary:hover {
+    background: #E07A1E;
+}
+
+.pc-action-ghost {
+    background: #ffffff;
+    color: #111827;
+    border: 1px solid rgba(17, 24, 39, 0.16);
+}
+
+.pc-action-ghost:hover {
+    background: #F8F2E9;
+}
+
+/* ── Mobile & Tablet Fallback ── */
+@media (max-width: 1024px) {
+    .power-cards-stage {
+        gap: 1.25rem;
+    }
+    .power-card-wrap {
+        width: 290px;
+    }
+    .pc-title {
+        font-size: 1.25rem;
+    }
+    .pc-desc {
+        font-size: 0.775rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .power-section {
+        height: auto;
+        padding: 5rem 0 4rem;
+    }
+
+    .power-sticky-wrapper {
+        position: static;
+        height: auto;
+        padding: 0;
+        overflow: visible;
+    }
+
+    .power-header {
+        margin-bottom: 2.5rem;
+    }
+
+    .power-cards-stage {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 0 1rem;
+        perspective: none;
+    }
+
+    .power-card-wrap {
+        width: 100%;
+        max-width: 360px;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .pc-actions {
+        position: static;
+        opacity: 1;
+        transform: none;
+        pointer-events: auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-top: 14px;
+    }
+
+    /* Subtle tilt on mobile cards */
+    .power-card-left .potential-card {
+        transform: rotate(-1.5deg);
+    }
+    .power-card-right .potential-card {
+        transform: rotate(1.5deg);
+    }
+    .potential-card:hover {
+        transform: translateY(-4px) scale(1.01) !important;
+    }
+}
+
+/* ------------------------------------------------------------------
+   More Than Numbers — Sticky stacking card layout
+   Cards stop at ~center of screen (30vh) and stack on each other.
+   ------------------------------------------------------------------ */
+
+.numbers-section {
+    position: relative;
+    /* NOTE: do NOT set overflow:hidden — it breaks position:sticky */
+
+    /* Single source of truth: the line where the deck stops.
+       The left "Our Impact" label and the front card both pin to this. */
+    --stack-pin: 30vh;
+}
+
+/* Two-column layout */
+.numbers-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+    padding-top: 7rem;
+    padding-bottom: 4rem;
+}
+
+/* LEFT: sticky title panel stays visible while cards scroll */
+.numbers-left {
+    position: sticky;
+    top: var(--stack-pin); /* aligns with the front card's stopping line */
+    align-self: start;
+}
+
+/* RIGHT: scrollable column where the cards pile up.
+   A small bottom runway is enough for each card to pin in sequence and
+   for the last card to settle on top — then the whole deck releases and
+   scrolls away together with the section (no long "parked" tail). */
+.numbers-right {
+    position: relative;
+    display: block;
+    padding-bottom: 6vh;
+}
+
+/* Slot wrappers are just containers: cards behave as direct children of the
+   right column so their sticky containing block is the shared runway above.
+   This is what lets earlier cards STAY pinned while later ones slide over them. */
+.card-slot {
+    display: contents;
+}
+
+/* Scroll spacing between each card's arrival */
+.card-slot .numbers-card {
+    margin-bottom: 14vh;
+}
+
+/* ── Card base ── */
+.numbers-card {
+    position: sticky;
+    width: 100%;
+    max-width: 380px;
+    border-radius: 28px;
+    padding: 2rem 2.25rem 2.5rem;
+    box-shadow: 0 28px 70px -15px rgba(0, 0, 0, 0.18);
+    font-family: 'Poppins', sans-serif;
+    transition: transform 0.15s ease, filter 0.15s ease;
+    transform-origin: top center;
+    will-change: transform, filter;
+}
+
+/* Stacking: EARLIER cards sit HIGHER (smaller top = higher on screen).
+   Later cards arrive from below at a lower top value → they cover earlier cards.
+   Earlier cards' top edges peek ABOVE the front card — like a real card deck.
+   Card 1 is highest (most behind), Card 4 is the active front card at center. */
+.card-slot:nth-child(1) .numbers-card { top: calc(var(--stack-pin) - 66px); z-index: 10; }
+.card-slot:nth-child(2) .numbers-card { top: calc(var(--stack-pin) - 44px); z-index: 20; }
+.card-slot:nth-child(3) .numbers-card { top: calc(var(--stack-pin) - 22px); z-index: 30; }
+.card-slot:nth-child(4) .numbers-card { top: var(--stack-pin);             z-index: 40; }
+
+/* ── Color variants ── */
+.nc-white-orange { background: #fff; border: 1px solid #f3e8d6; }
+.nc-orange        { background: #F2994A; }
+.nc-dark          { background: #1c1c1e; }
+.nc-white-green   { background: #fff; border: 1px solid #d1fae5; }
+
+/* ── Icon badge (circle, top-right) ── */
+.nc-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 2.75rem;
+}
+
+.nc-badge {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.nc-badge-orange          { background: #F2994A; }
+.nc-badge-white-on-orange { background: #fff; }
+.nc-badge-green           { background: #10B981; }
+
+/* ── Huge stat number ── */
+.nc-stat {
+    font-family: 'Poppins', sans-serif;
+    font-size: 5.5rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    display: flex;
+    align-items: flex-end;
+    gap: 0.05em;
+    margin-bottom: 0.6rem;
+}
+
+.nc-plus {
+    font-size: 3.25rem;
+    font-weight: 700;
+    line-height: 1.15;
+    opacity: 0.7;
+}
+
+/* ── Sub-label (uppercase tag) ── */
+.nc-sublabel {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.85rem;
+    opacity: 0.65;
+}
+
+/* ── Description text ── */
+.nc-desc {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.65;
+}
+
+/* ── Per-theme text colors ── */
+.nc-white-orange .nc-stat,
+.nc-white-orange .nc-sublabel,
+.nc-white-orange .nc-desc   { color: #F2994A; }
+
+.nc-orange .nc-stat,
+.nc-orange .nc-sublabel,
+.nc-orange .nc-desc         { color: #fff; }
+
+.nc-dark .nc-stat,
+.nc-dark .nc-sublabel,
+.nc-dark .nc-desc           { color: #F2994A; }
+
+.nc-white-green .nc-stat,
+.nc-white-green .nc-sublabel,
+.nc-white-green .nc-desc    { color: #10B981; }
+
+/* Stat-card: reset opacity so old rule doesn't hide these */
+.stat-card { opacity: 0; }
+
+/* ── Mobile: collapse to normal vertical flow ── */
+@media (max-width: 768px) {
+    .numbers-inner {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        padding-top: 4rem;
+        padding-bottom: 3rem;
+    }
+
+    .numbers-left {
+        position: static;
+    }
+
+    .numbers-right {
+        padding-bottom: 0;
+    }
+
+    .card-slot {
+        display: block;
+    }
+
+    .card-slot .numbers-card {
+        position: static;
+        z-index: auto;
+        max-width: 100%;
+        margin-bottom: 1.25rem;
+    }
+
+    .card-slot--last .numbers-card {
+        margin-bottom: 0;
+    }
+}
+
+/* ------------------------------------------------------------------
+   Custom scrollbar
+   ------------------------------------------------------------------ */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #F2994A;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #E07A1E;
+}

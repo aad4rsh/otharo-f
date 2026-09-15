@@ -1,0 +1,365 @@
+/* =========================================================
+   Otharo — Programs Page Styles (Upcoming Events)
+   ========================================================= */
+
+/* Wrapped in @layer components so Tailwind v4 utilities
+   (base/components/utilities cascade layers) can override */
+
+@layer components {
+
+/* ---------- Upcoming Events bento / accordion (programs page) ---------- */
+.events-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 28px;
+}
+
+.events-row--single {
+    flex-wrap: nowrap;
+}
+
+@media (min-width: 640px) {
+    .events-row {
+        gap: 24px;
+        margin-bottom: 28px;
+    }
+    .events-row--single {
+        flex-wrap: nowrap;
+    }
+}
+
+.events-row:not(.events-row--single) .event-card {
+    flex: 1 1 100%;
+    align-self: stretch;
+}
+
+@media (min-width: 768px) {
+    .events-row:not(.events-row--single) .event-card {
+        flex: 1 1 0%;
+        transition: flex-grow 0.4s ease-in-out, flex-basis 0.4s ease-in-out;
+    }
+    .events-row:not(.events-row--single) .event-card:hover {
+        flex-grow: 1.55;
+    }
+}
+
+.events-row--single .event-card {
+    flex: 1 1 100%;
+}
+
+/* Desktop: pin the full-width Otharo card to the bottom so it grows UPWARD.
+   The top pair's bottom edge rises to make room — its top edge stays anchored
+   to the heading, so it never collides with the UPCOMING EVENTS text. */
+@media (min-width: 768px) {
+    .events-wrap {
+        position: relative;
+        height: 580px;
+    }
+
+    .events-row--single {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .events-row--single .event-card {
+        height: 260px;
+        transition: height 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* Grow the hovered Otharo card upward */
+    .events-row--single .event-card:hover {
+        height: 344px;
+    }
+
+    /* When the Otharo card is hovered, shrink the two top cards so their
+       bottoms rise and free up the space above the growing card */
+    .events-row:not(.events-row--single) .event-card {
+        transition: flex-grow 0.4s ease-in-out, flex-basis 0.4s ease-in-out, height 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .events-wrap:has(.events-row--single .event-card:hover) .events-row:not(.events-row--single) .event-card {
+        height: 172px;
+    }
+}
+
+.event-card {
+    position: relative;
+    border-radius: 22px;
+    overflow: hidden;
+    height: 220px;
+    box-shadow: 0 24px 48px -24px rgba(0, 0, 0, 0.35);
+    cursor: pointer;
+    isolation: isolate;
+    transition: height 0.4s ease-in-out;
+}
+
+@media (min-width: 768px) {
+    .event-card {
+        height: 260px;
+    }
+}
+
+.event-card > img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+    transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.event-card:hover > img {
+    transform: scale(1.05);
+}
+
+.event-card__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.35) 38%, transparent 60%);
+}
+
+.event-card__go {
+    position: absolute;
+    top: 1.1rem;
+    right: 1.1rem;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1C1917;
+    box-shadow: 0 8px 20px -8px rgba(0, 0, 0, 0.35);
+    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+    z-index: 2;
+}
+
+.event-card__go:hover {
+    background: #F7941D;
+    color: #fff;
+    transform: translate(2px, -2px);
+}
+
+.event-card__go svg {
+    width: 18px;
+    height: 18px;
+}
+
+.event-card__body {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 1.5rem 1.75rem 1.75rem;
+    z-index: 1;
+}
+
+.event-card__title {
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: #fff;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+}
+
+.event-card__meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0.9rem;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transform: translateY(8px);
+    transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+
+@media (min-width: 768px) {
+    .events-row:not(.events-row--single) .event-card:hover .event-card__meta {
+        max-height: 140px;
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (hover: none) {
+    .events-row:not(.events-row--single) .event-card__meta {
+        max-height: 140px;
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.event-card__desc {
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 0.8rem;
+    max-width: 34rem;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transform: translateY(8px);
+    transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+
+.events-row--single .event-card:hover .event-card__desc {
+    max-height: 140px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (hover: none) {
+    .events-row--single .event-card__desc {
+        max-height: 140px;
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.event-meta__item {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-size: 0.82rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.event-meta__item svg {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+    opacity: 0.85;
+}
+
+/* ---------- Tabbed Programs / Resources section ---------- */
+.programs-tab {
+    font-family: var(--condensed, 'Bebas Neue', sans-serif);
+    font-weight: 700;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    letter-spacing: 0.025em;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #3F4448;
+    background: none;
+    border: 0;
+    padding: 0.15rem 0;
+    cursor: pointer;
+    transition: color 0.25s ease;
+}
+
+.programs-tab:hover {
+    color: #F7941D;
+}
+
+.programs-tab.is-active {
+    color: #F7941D;
+}
+
+.programs-tab__divider {
+    width: 1px;
+    height: 1.6rem;
+    background: #D8D2C9;
+    display: inline-block;
+}
+
+.programs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    align-items: start;
+}
+
+@media (max-width: 1023px) {
+    .programs-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 639px) {
+    .programs-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.program-card {
+    background: #FBF3E7;
+    border: 1px solid #F3E7D5;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 18px 40px -26px rgba(63, 60, 52, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.program-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 26px 52px -26px rgba(63, 60, 52, 0.55);
+}
+
+.program-card__img {
+    aspect-ratio: 4 / 3;
+    border-radius: 11px;
+    overflow: hidden;
+    margin-bottom: 0.85rem;
+}
+
+.program-card__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.program-card:hover .program-card__img img {
+    transform: scale(1.05);
+}
+
+.program-card h3 {
+    font-family: var(--sans, 'Poppins', sans-serif);
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.35;
+    color: #333333;
+    margin-bottom: 0.5rem;
+}
+
+.program-card p {
+    font-family: var(--sans, 'Poppins', sans-serif);
+    font-weight: 400;
+    font-size: 0.82rem;
+    line-height: 1.65;
+    color: #777777;
+    margin-bottom: 0.9rem;
+}
+
+.program-card__link {
+    font-family: var(--sans, 'Poppins', sans-serif);
+    font-weight: 500;
+    font-size: 0.82rem;
+    color: #F7941D;
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    text-decoration: none;
+    transition: color 0.25s ease, gap 0.25s ease;
+}
+
+.program-card__link:hover {
+    color: #C76B14;
+    gap: 0.6rem;
+}
+
+} /* end @layer components */

@@ -1,0 +1,375 @@
+/* =========================================================
+   Otharo — Innovation Kitchen Page Styles
+   ========================================================= */
+
+/* Wrapped in @layer components so Tailwind v4 utilities can override */
+
+@layer components {
+
+/* ---------- Mosaic grid (edge-to-edge, no gaps) ---------- */
+.mosaic {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 260px;
+    gap: 0;
+    width: 100%;
+}
+
+.mosaic-tile {
+    position: relative;
+    min-width: 0;
+}
+
+.mosaic-tile--img {
+    overflow: hidden;
+}
+
+.mosaic-tile--img > img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Desktop: the 2 rows share the full viewport height below the fixed navbar */
+@media (min-width: 1024px) {
+    .mosaic {
+        grid-template-rows: repeat(2, minmax(0, 1fr));
+        height: calc(100vh - 80px);
+    }
+}
+
+@media (max-width: 1023px) {
+    .mosaic {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 220px;
+    }
+}
+
+@media (max-width: 640px) {
+    .mosaic {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 200px;
+    }
+}
+
+/* ---------- Flip cards (text tiles) ---------- */
+.flip-card {
+    background: #F7941D;
+    cursor: pointer;
+    perspective: 1200px;
+}
+
+.flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out;
+}
+
+.flip-card.is-flipped .flip-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-face {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 22px 24px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    text-align: left;
+}
+
+.flip-front {
+    background: #F7941D;
+}
+
+.flip-back {
+    transform: rotateY(180deg);
+    background: #ffffff;
+}
+
+.flip-back .fk-acro,
+.flip-back .fk-title {
+    color: #1C1917;
+}
+
+.flip-back .fk-desc {
+    color: rgba(28, 25, 23, 0.78);
+}
+
+.fk-acro {
+    font-family: var(--sans, 'Poppins', sans-serif);
+    font-weight: 800;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    line-height: 1;
+    color: #fff;
+    margin-bottom: 12px;
+    letter-spacing: 0.01em;
+}
+
+.fk-title {
+    font-family: var(--sans, 'Poppins', sans-serif);
+    font-weight: 700;
+    font-size: clamp(0.95rem, 1.6vw, 1.2rem);
+    line-height: 1.2;
+    color: #fff;
+}
+
+.fk-desc {
+    font-family: var(--sans, 'Poppins', sans-serif);
+    font-weight: 400;
+    font-size: clamp(0.7rem, 1vw, 0.82rem);
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.88);
+    margin-top: 10px;
+    max-width: 26ch;
+}
+
+.flip-hint {
+    position: absolute;
+    bottom: 14px;
+    left: 24px;
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .flip-inner {
+        transition: none;
+    }
+}
+
+/* ---------- Past events — sticky stacking card layout ----------
+   Mirrors the "More Than Numbers" deck on the front page: cards pin
+   at the stack line and pile on top of each other while scrolling. */
+.pe-section {
+    position: relative;
+    --pe-pin: 30vh;
+}
+
+.pe-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+    padding-top: 7rem;
+    padding-bottom: 4rem;
+}
+
+.pe-left {
+    position: sticky;
+    top: var(--pe-pin);
+    align-self: start;
+}
+
+.pe-right {
+    position: relative;
+    display: block;
+    padding-bottom: 8vh;
+}
+
+.pe-slot { display: contents; }
+
+.pe-slot .pe-card { margin-bottom: 18vh; }
+
+.pe-card {
+    position: sticky;
+    width: 100%;
+    max-width: 420px;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 28px 70px -15px rgba(0, 0, 0, 0.18);
+}
+
+.pe-slot:nth-child(1) .pe-card { top: calc(var(--pe-pin) - 52px); z-index: 10; }
+.pe-slot:nth-child(2) .pe-card { top: calc(var(--pe-pin) - 26px); z-index: 20; }
+.pe-slot:nth-child(3) .pe-card { top: var(--pe-pin);             z-index: 30; }
+
+.pe-panel {
+    background: #F7941D;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.pe-badge {
+    background: #fff;
+    color: #3f4448;
+    font-weight: 500;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.42rem 0.9rem;
+    border-radius: 999px;
+    white-space: nowrap;
+}
+
+.pe-title {
+    font-family: var(--sans, 'Poppins', sans-serif);
+    font-weight: 700;
+    font-size: clamp(1.15rem, 2vw, 1.45rem);
+    line-height: 1.2;
+    color: #fff;
+    margin-top: 1rem;
+}
+
+.pe-desc {
+    font-family: var(--sans, 'Poppins', sans-serif);
+    font-weight: 400;
+    font-size: 0.82rem;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.92);
+    margin-top: 0.85rem;
+}
+
+.pe-media {
+    position: relative;
+    height: 260px;
+}
+
+.pe-media img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width: 767px) {
+    .pe-inner {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        padding-top: 4rem;
+        padding-bottom: 3rem;
+    }
+
+    .pe-left {
+        position: static;
+    }
+
+    .pe-right {
+        padding-bottom: 0;
+    }
+
+    .pe-slot {
+        display: block;
+    }
+
+    .pe-slot .pe-card {
+        position: static;
+        z-index: auto;
+        max-width: 100%;
+        margin-bottom: 1.5rem;
+    }
+
+    .pe-slot:last-child .pe-card {
+        margin-bottom: 0;
+    }
+}
+
+/* ---------- Partners marquee ---------- */
+.partners-marquee {
+    overflow: hidden;
+    position: relative;
+    --m-gap: 3rem;
+    --m-item-width: 140px;
+    --m-track-width: 200%;
+    --m-anim-duration: 40s;
+}
+
+/* left / right fade masks */
+.partners-marquee::before,
+.partners-marquee::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 4.5rem;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.partners-marquee::before {
+    left: 0;
+    background: linear-gradient(to right, #fff, transparent 80%);
+}
+
+.partners-marquee::after {
+    right: 0;
+    background: linear-gradient(to left, #fff, transparent 80%);
+}
+
+.partners-marquee__track {
+    display: flex;
+    width: var(--m-track-width);
+    animation: partners-scroll var(--m-anim-duration) linear infinite;
+}
+
+.partners-marquee:hover .partners-marquee__track {
+    animation-play-state: paused;
+}
+
+.partners-marquee__group {
+    display: flex;
+    align-items: center;
+    gap: var(--m-gap);
+    width: 50%;
+    flex-shrink: 0;
+    justify-content: space-around;
+}
+
+@keyframes partners-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+
+.partners-marquee__item {
+    flex-shrink: 0;
+    width: var(--m-item-width);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+}
+
+.partners-marquee__item img {
+    height: 64px;
+    max-width: 100%;
+    object-fit: contain;
+    filter: grayscale(1) opacity(0.7);
+    transition: filter 0.4s ease, opacity 0.4s ease;
+}
+
+.partners-marquee__item:hover img {
+    filter: grayscale(0) opacity(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .partners-marquee__track {
+        animation: none;
+    }
+}
+
+@media (min-width: 640px) {
+    .partners-marquee {
+        --m-item-width: 160px;
+    }
+
+    .partners-marquee__item img {
+        height: 72px;
+    }
+}
+
+} /* end @layer components */

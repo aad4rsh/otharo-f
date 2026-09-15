@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# OS junk
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor / IDE
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# Misc
+*.local
