@@ -56,17 +56,20 @@
     function initMobileMenu() {
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
+        const nav = document.getElementById('main-nav');
 
         if (!btn || !menu) return;
 
         btn.addEventListener('click', function () {
             menu.classList.toggle('hidden');
+            if (nav) nav.classList.toggle('menu-open', !menu.classList.contains('hidden'));
         });
 
         // Close the menu when a link inside it is clicked
         menu.querySelectorAll('a').forEach(function (link) {
             link.addEventListener('click', function () {
                 menu.classList.add('hidden');
+                if (nav) nav.classList.remove('menu-open');
             });
         });
     }

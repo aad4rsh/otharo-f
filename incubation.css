@@ -200,6 +200,14 @@ a {
     display: block;
 }
 
+/* Mobile menu visibility (controlled by incubation.js toggle) */
+#mobile-menu {
+    display: none;
+}
+#mobile-menu.is-open {
+    display: block;
+}
+
 .navbar__mobile a {
     display: block;
     padding: 0.65rem 0;

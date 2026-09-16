@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cohort · Otharo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="dist/output.css">
+<link rel="stylesheet" href="incubation.css">
+<link rel="stylesheet" href="cohort.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll/bundled/locomotive-scroll.css">
+</head>
+<body class="bg-[#FDF7EF] font-sans text-stone-900 antialiased overflow-x-hidden">
+<!-- ===================== NAVBAR ===================== -->
+<header id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-stone-100 transition-shadow duration-300 shadow-sm">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 lg:h-20 flex items-center justify-between gap-4">
+<a href="index.html" class="shrink-0">
+<img src="assets/Otharo B_Y Logo 1.png" alt="Otharo Logo" class="h-12 lg:h-[68px] w-auto">
+</a>
+<div class="flex items-center gap-3">
+<a href="apply.html" class="inline-flex items-center justify-center px-10 py-3 rounded-full bg-[#F2994A] text-white text-sm leading-none tracking-tight font-medium transition-all duration-300 hover:bg-[#E07A1E]">Apply Now</a>
+<button id="mobile-menu-btn" class="p-2 rounded-lg text-stone-900 hover:text-[#F2994A] focus:outline-none" aria-label="Toggle Menu" aria-expanded="false">
+<svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+</svg>
+</button>
+</div>
+</div>
+<nav id="mobile-menu" class="bg-white border-t border-stone-100 px-6 py-6 space-y-4 shadow-lg">
+<a href="index.html" class="block text-stone-800 hover:text-[#F2994A] text-base font-semibold py-1">Home</a>
+<a href="aboutus.html" class="block text-stone-800 hover:text-[#F2994A] text-base font-semibold py-1">About Us</a>
+<a href="programs.html" class="block text-stone-800 hover:text-[#F2994A] text-base font-semibold py-1">Programs</a>
+<a href="incubation.html" class="block text-stone-800 hover:text-[#F2994A] text-base font-semibold py-1">Incubation</a>
+<a href="innovationKitchen.html" class="block text-stone-800 hover:text-[#F2994A] text-base font-semibold py-1">Innovation Kitchen</a>
+<a href="cohort.html" class="block text-stone-800 hover:text-[#F2994A] text-base font-semibold py-1">Cohort</a>
+<div class="pt-2">
+<a href="apply.html" class="block text-center w-full py-2.5 rounded-full bg-[#F2994A] text-white font-bold text-sm uppercase">Apply for Incubation</a>
+</div>
+</nav>
+</header>
+
+<!-- ===================== COHORTS ===================== -->
+<section id="cohorts" class="coh-section">
+<div class="coh-inner max-w-[2400px] mx-auto px-4 sm:px-6 lg:px-16">
+
+<!-- LEFT: sticky title + cohort list -->
+<div class="coh-left">
+<h2 class="text-5xl sm:text-7xl font-black font-condensed uppercase tracking-normal text-stone-900">
+Our<br/><span class="text-[#F2994A]">Cohorts</span>
+</h2>
+<div class="mt-8 w-12 h-1.5 bg-[#F2994A] rounded-full"></div>
+
+<ol class="coh-list">
+<li class="coh-list-item is-active" data-card="0"><span class="coh-list-num">01</span>Cohort I</li>
+<li class="coh-list-item" data-card="1"><span class="coh-list-num">02</span>Cohort II</li>
+<li class="coh-list-item" data-card="2"><span class="coh-list-num">03</span>Cohort III</li>
+<li class="coh-list-item" data-card="3"><span class="coh-list-num">04</span>Cohort IV</li>
+<li class="coh-list-item" data-card="4"><span class="coh-list-num">05</span>Cohort V</li>
+</ol>
+</div>
+
+<!-- RIGHT: cohort cards (active one shown on click) -->
+<div class="coh-right">
+
+<div class="coh-slot is-active">
+<article class="coh-card">
+<header class="coh-head"><span>Cohort I</span></header>
+<div class="coh-body">
+<div class="coh-logos">
+<div class="coh-cell">
+<img src="assets/logo/ather.png" alt="Ather logo">
+<div class="coh-cell-meta">
+<h4 class="coh-name">Ather</h4>
+<p class="coh-desc">Electric mobility startup building clean, smart and connected transport for modern cities — from two-wheelers to software powering them.</p>
+</div>
+<a class="coh-ig" href="#" target="_blank" rel="noopener" aria-label="Ather on Instagram"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"/><circle cx="18.636" cy="5.364" r="1.08"/><path d="M23.957 8.529c-.114-2.529-.623-4.757-2.457-6.591-1.834-1.833-4.061-2.342-6.591-2.457-2.614-.121-10.457-.121-13.072 0-2.529.114-4.757.623-6.591 2.457-1.833 1.834-2.342 4.061-2.457 6.591-.121 2.614-.121 10.457 0 13.072.114 2.529.623 4.757 2.457 6.591 1.834 1.833 4.061 2.342 6.591 2.457 2.614.121 10.457.121 13.072 0 2.529-.114 4.757-.623 6.591-2.457 1.833-1.834 2.342-4.061 2.457-6.591.121-2.614.121-10.457 0-13.072zm-2.146 12.825c-1.129 1.13-2.524 1.488-4.437 1.577-2.553.118-10.194.118-12.748 0-1.913-.089-3.308-.447-4.437-1.577-1.13-1.129-1.488-2.524-1.577-4.437-.118-2.553-.118-10.194 0-12.748.089-1.913.447-3.308 1.577-4.437 1.129-1.13 2.524-1.488 4.437-1.577 2.553-.118 10.194-.118 12.748 0 1.913.089 3.308.447 4.437 1.577 1.13 1.129 1.488 2.524 1.577 4.437.118 2.553.118 10.194 0 12.748-.089 1.913-.447 3.308-1.577 4.437z"/></svg></a>
+</div>
+<div class="coh-cell">
+<img src="assets/logo/Yarsa Logo 1.png" alt="Yarsa logo">
+<div class="coh-cell-meta">
+<h4 class="coh-name">Yarsa</h4>
+<p class="coh-desc">Software and design studio crafting digital products end to end — research, build, launch and scale — for teams that move fast.</p>
+</div>
+<a class="coh-ig" href="#" target="_blank" rel="noopener" aria-label="Yarsa on Instagram"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"/><circle cx="18.636" cy="5.364" r="1.08"/><path d="M23.957 8.529c-.114-2.529-.623-4.757-2.457-6.591-1.834-1.833-4.061-2.342-6.591-2.457-2.614-.121-10.457-.121-13.072 0-2.529.114-4.757.623-6.591 2.457-1.833 1.834-2.342 4.061-2.457 6.591-.121 2.614-.121 10.457 0 13.072.114 2.529.623 4.757 2.457 6.591 1.834 1.833 4.061 2.342 6.591 2.457 2.614.121 10.457.121 13.072 0 2.529-.114 4.757-.623 6.591-2.457 1.833-1.834 2.342-4.061 2.457-6.591.121-2.614.121-10.457 0-13.072zm-2.146 12.825c-1.129 1.13-2.524 1.488-4.437 1.577-2.553.118-10.194.118-12.748 0-1.913-.089-3.308-.447-4.437-1.577-1.13-1.129-1.488-2.524-1.577-4.437-.118-2.553-.118-10.194 0-12.748.089-1.913.447-3.308 1.577-4.437 1.129-1.13 2.524-1.488 4.437-1.577 2.553-.118 10.194-.118 12.748 0 1.913.089 3.308.447 4.437 1.577 1.13 1.129 1.488 2.524 1.577 4.437.118 2.553.118 10.194 0 12.748-.089 1.913-.447 3.308-1.577 4.437z"/></svg></a>
+</div>
+<div class="coh-cell">
+<img src="assets/logo/eSahara_Nepal - Baibhav Shrestha 1.png" alt="eSahara logo">
+<div class="coh-cell-meta">
+<h4 class="coh-name">eSahara</h4>
+<p class="coh-desc">Fintech venture reimagining payments and financial access for underserved communities through simple, secure and smart tools.</p>
+</div>
+<a class="coh-ig" href="#" target="_blank" rel="noopener" aria-label="eSahara on Instagram"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"/><circle cx="18.636" cy="5.364" r="1.08"/><path d="M23.957 8.529c-.114-2.529-.623-4.757-2.457-6.591-1.834-1.833-4.061-2.342-6.591-2.457-2.614-.121-10.457-.121-13.072 0-2.529.114-4.757.623-6.591 2.457-1.833 1.834-2.342 4.061-2.457 6.591-.121 2.614-.121 10.457 0 13.072.114 2.529.623 4.757 2.457 6.591 1.834 1.833 4.061 2.342 6.591 2.457 2.614.121 10.457.121 13.072 0 2.529-.114 4.757-.623 6.591-2.457 1.833-1.834 2.342-4.061 2.457-6.591.121-2.614.121-10.457 0-13.072zm-2.146 12.825c-1.129 1.13-2.524 1.488-4.437 1.577-2.553.118-10.194.118-12.748 0-1.913-.089-3.308-.447-4.437-1.577-1.13-1.129-1.488-2.524-1.577-4.437-.118-2.553-.118-10.194 0-12.748.089-1.913.447-3.308 1.577-4.437 1.129-1.13 2.524-1.488 4.437-1.577 2.553-.118 10.194-.118 12.748 0 1.913.089 3.308.447 4.437 1.577 1.13 1.129 1.488 2.524 1.577 4.437.118 2.553.118 10.194 0 12.748-.089 1.913-.447 3.308-1.577 4.437z"/></svg></a>
+</div>
+<div class="coh-cell">
+<img src="assets/logo/samparka.png" alt="Samparka logo">
+<div class="coh-cell-meta">
+<h4 class="coh-name">Samparka</h4>
+<p class="coh-desc">Connectivity platform helping communities, teams and marketplaces stay linked, informed and always a message away.</p>
+</div>
+<a class="coh-ig" href="#" target="_blank" rel="noopener" aria-label="Samparka on Instagram"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"/><circle cx="18.636" cy="5.364" r="1.08"/><path d="M23.957 8.529c-.114-2.529-.623-4.757-2.457-6.591-1.834-1.833-4.061-2.342-6.591-2.457-2.614-.121-10.457-.121-13.072 0-2.529.114-4.757.623-6.591 2.457-1.833 1.834-2.342 4.061-2.457 6.591-.121 2.614-.121 10.457 0 13.072.114 2.529.623 4.757 2.457 6.591 1.834 1.833 4.061 2.342 6.591 2.457 2.614.121 10.457.121 13.072 0 2.529-.114 4.757-.623 6.591-2.457 1.833-1.834 2.342-4.061 2.457-6.591.121-2.614.121-10.457 0-13.072zm-2.146 12.825c-1.129 1.13-2.524 1.488-4.437 1.577-2.553.118-10.194.118-12.748 0-1.913-.089-3.308-.447-4.437-1.577-1.13-1.129-1.488-2.524-1.577-4.437-.118-2.553-.118-10.194 0-12.748.089-1.913.447-3.308 1.577-4.437 1.129-1.13 2.524-1.488 4.437-1.577 2.553-.118 10.194-.118 12.748 0 1.913.089 3.308.447 4.437 1.577 1.13 1.129 1.488 2.524 1.577 4.437.118 2.553.118 10.194 0 12.748-.089 1.913-.447 3.308-1.577 4.437z"/></svg></a>
+</div>
+<div class="coh-cell">
+<img src="assets/logo/studioBrianta.png" alt="Studio Brianta logo">
+<div class="coh-cell-meta">
+<h4 class="coh-name">Studio Brianta</h4>
+<p class="coh-desc">Independent creative studio producing brands, visual identities and campaigns with sharp thinking and craft behind every pixel.</p>
+</div>
+<a class="coh-ig" href="#" target="_blank" rel="noopener" aria-label="Studio Brianta on Instagram"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"/><circle cx="18.636" cy="5.364" r="1.08"/><path d="M23.957 8.529c-.114-2.529-.623-4.757-2.457-6.591-1.834-1.833-4.061-2.342-6.591-2.457-2.614-.121-10.457-.121-13.072 0-2.529.114-4.757.623-6.591 2.457-1.833 1.834-2.342 4.061-2.457 6.591-.121 2.614-.121 10.457 0 13.072.114 2.529.623 4.757 2.457 6.591 1.834 1.833 4.061 2.342 6.591 2.457 2.614.121 10.457.121 13.072 0 2.529-.114 4.757-.623 6.591-2.457 1.833-1.834 2.342-4.061 2.457-6.591.121-2.614.121-10.457 0-13.072zm-2.146 12.825c-1.129 1.13-2.524 1.488-4.437 1.577-2.553.118-10.194.118-12.748 0-1.913-.089-3.308-.447-4.437-1.577-1.13-1.129-1.488-2.524-1.577-4.437-.118-2.553-.118-10.194 0-12.748.089-1.913.447-3.308 1.577-4.437 1.129-1.13 2.524-1.488 4.437-1.577 2.553-.118 10.194-.118 12.748 0 1.913.089 3.308.447 4.437 1.577 1.13 1.129 1.488 2.524 1.577 4.437.118 2.553.118 10.194 0 12.748-.089 1.913-.447 3.308-1.577 4.437z"/></svg></a>
+</div>
+<div class="coh-cell">
+<img src="assets/logo/logo-kapp - Sangam Uprety 1.png" alt="Kapp logo">
+<div class="coh-cell-meta">
+<h4 class="coh-name">Kapp</h4>
+<p class="coh-desc">Healthtech startup making health data simpler, safer and more useful — for patients and the teams who care for them.</p>
+</div>
+<a class="coh-ig" href="#" target="_blank" rel="noopener" aria-label="Kapp on Instagram"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"/><circle cx="18.636" cy="5.364" r="1.08"/><path d="M23.957 8.529c-.114-2.529-.623-4.757-2.457-6.591-1.834-1.833-4.061-2.342-6.591-2.457-2.614-.121-10.457-.121-13.072 0-2.529.114-4.757.623-6.591 2.457-1.833 1.834-2.342 4.061-2.457 6.591-.121 2.614-.121 10.457 0 13.072.114 2.529.623 4.757 2.457 6.591 1.834 1.833 4.061 2.342 6.591 2.457 2.614.121 10.457.121 13.072 0 2.529-.114 4.757-.623 6.591-2.457 1.833-1.834 2.342-4.061 2.457-6.591.121-2.614.121-10.457 0-13.072zm-2.146 12.825c-1.129 1.13-2.524 1.488-4.437 1.577-2.553.118-10.194.118-12.748 0-1.913-.089-3.308-.447-4.437-1.577-1.13-1.129-1.488-2.524-1.577-4.437-.118-2.553-.118-10.194 0-12.748.089-1.913.447-3.308 1.577-4.437 1.129-1.13 2.524-1.488 4.437-1.577 2.553-.118 10.194-.118 12.748 0 1.913.089 3.308.447 4.437 1.577 1.13 1.129 1.488 2.524 1.577 4.437.118 2.553.118 10.194 0 12.748-.089 1.913-.447 3.308-1.577 4.437z"/></svg></a>
+</div>
+</div>
+<div class="coh-info">
+<p class="coh-sub">Six startups, one cohort — building for Nepal's tomorrow.</p>
+<a class="coh-insta" href="#" target="_blank" rel="noopener" aria-label="Cohort I on Instagram">
+<svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"/><circle cx="18.636" cy="5.364" r="1.08"/><path d="M23.957 8.529c-.114-2.529-.623-4.757-2.457-6.591-1.834-1.833-4.061-2.342-6.591-2.457-2.614-.121-10.457-.121-13.072 0-2.529.114-4.757.623-6.591 2.457-1.833 1.834-2.342 4.061-2.457 6.591-.121 2.614-.121 10.457 0 13.072.114 2.529.623 4.757 2.457 6.591 1.834 1.833 4.061 2.342 6.591 2.457 2.614.121 10.457.121 13.072 0 2.529-.114 4.757-.623 6.591-2.457 1.833-1.834 2.342-4.061 2.457-6.591.121-2.614.121-10.457 0-13.072zm-2.146 12.825c-1.129 1.13-2.524 1.488-4.437 1.577-2.553.118-10.194.118-12.748 0-1.913-.089-3.308-.447-4.437-1.577-1.13-1.129-1.488-2.524-1.577-4.437-.118-2.553-.118-10.194 0-12.748.089-1.913.447-3.308 1.577-4.437 1.129-1.13 2.524-1.488 4.437-1.577 2.553-.118 10.194-.118 12.748 0 1.913.089 3.308.447 4.437 1.577 1.13 1.129 1.488 2.524 1.577 4.437.118 2.553.118 10.194 0 12.748-.089 1.913-.447 3.308-1.577 4.437z"/></svg>
+Instagram
+</a>
+</div>
+</div>
+</article>
+</div>
+
+<div class="coh-slot">
+<article class="coh-card">
+<header class="coh-head"><span>Cohort II</span></header>
+<div class="coh-body">
+<div class="coh-logos">
+<div class="coh-cell">
+<img src="assets/logo/Mr.Waffles logo-01 1.png" alt="Mr. Waffles logo">
+<div class="coh-cell-meta">
+<h4 class="coh-name">Mr. Waffles</h4>
+<p class="coh-desc">Food and beverage brand serving original waffle creations, desserts and drinks with a vibe worth sharing every single day.</p>
+</div>
+<a class="coh-ig" href="#" target="_blank" rel="noopener" aria-label="Mr. Waffles on Instagram"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"/><circle cx="18.636" cy="5.364" r="1.08"/><path d="M23.957 8.529c-.114-2.529-.623-4.757-2.457-6.591-1.834-1.833-4.061-2.342-6.591-2.457-2.614-.121-10.457-.121-13.072 0-2.529.114-4.757.623-6.591 2.457-1.833 1.834-2.342 4.061-2.457 6.591-.121 2.614-.121 10.457 0 13.072.114 2.529.623 4.757 2.457 6.591 1.834 1.833 4.061 2.342 6.591 2.457 2.614.121 10.457.121 13.072 0 2.529-.114 4.757-.623 6.591-2.457 1.833-1.834 2.342-4.061 2.457-6.591.121-2.614.121-10.457 0-13.072zm-2.146 12.825c-1.129 1.13-2.524 1.488-4.437 1.577-2.553.118-10.194.118-12.748 0-1.913-.089-3.308-.447-4.437-1.577-1.13-1.129-1.488-2.524-1.577-4.437-.118-2.553-.118-10.194 0-12.748.089-1.913.447-3.308 1.577-4.437 1.129-1.13 2.524-1.488 4.437-1.577 2.553-.118 10.194-.118 12.748 0 1.913.089 3.308.447 4.437 1.577 1.13 1.129 1.488 2.524 1.577 4.437.118 2.553.118 10.194 0 12.748-.089 1.913-.447 3.308-1.577 4.437z"/></svg></a>
+</div>
+<div class="coh-cell">
+<img src="assets/logo/IK.png" alt="IK logo">
+<div class="coh-cell-meta">
+<h4 class="coh-name">IK</h4>
+<p class="coh-desc">Consumer app startup designing fast, intuitive products that quietly make everyday life easier and a little more delightful.</p>
+</div>
+<a class="coh-ig" href="#" target="_blank" rel="noopener" aria-label="IK on Instagram"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"/><circle cx="18.636" cy="5.364" r="1.08"/><path d="M23.957 8.529c-.114-2.529-.623-4.757-2.457-6.591-1.834-1.833-4.061-2.342-6.591-2.457-2.614-.121-10.457-.121-13.072 0-2.529.114-4.757.623-6.591 2.457-1.833 1.834-2.342 4.061-2.457 6.591-.121 2.614-.121 10.457 0 13.072.114 2.529.623 4.757 2.457 6.591 1.834 1.833 4.061 2.342 6.591 2.457 2.614.121 10.457.121 13.072 0 2.529-.114 4.757-.623 6.591-2.457 1.833-1.834 2.342-4.061 2.457-6.591.121-2.614.121-10.457 0-13.072zm-2.146 12.825c-1.129 1.13-2.524 1.488-4.437 1.577-2.553.118-10.194.118-12.748 0-1.913-.089-3.308-.447-4.437-1.577-1.13-1.129-1.488-2.524-1.577-4.437-.118-2.553-.118-10.194 0-12.748.089-1.913.447-3.308 1.577-4.437 1.129-1.13 2.524-1.488 4.437-1.577 2.553-.118 10.194-.118 12.748 0 1.913.089 3.308.447 4.437 1.577 1.13 1.129 1.488 2.524 1.577 4.437.118 2.553.118 10.194 0 12.748-.089 1.913-.447 3.308-1.577 4.437z"/></svg></a>
+</div>
+<div class="coh-cell">
+<img src="assets/logo/3 half-transparent 1.png" alt="Brand logo">
+<div class="coh-cell-meta">
+<h4 class="coh-name">Brand</h4>
+<p class="coh-desc">Lifestyle brand built around identity and culture — apparel and products that speak for the community that wears them.</p>
+</div>
+<a class="coh-ig" href="#" target="_blank" rel="noopener" aria-label="Brand on Instagram"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"/><circle cx="18.636" cy="5.364" r="1.08"/><path d="M23.957 8.529c-.114-2.529-.623-4.757-2.457-6.591-1.834-1.833-4.061-2.342-6.591-2.457-2.614-.121-10.457-.121-13.072 0-2.529.114-4.757.623-6.591 2.457-1.833 1.834-2.342 4.061-2.457 6.591-.121 2.614-.121 10.457 0 13.072.114 2.529.623 4.757 2.457 6.591 1.834 1.833 4.061 2.342 6.591 2.457 2.614.121 10.457.121 13.072 0 2.529-.114 4.757-.623 6.591-2.457 1.833-1.834 2.342-4.061 2.457-6.591.121-2.614.121-10.457 0-13.072zm-2.146 12.825c-1.129 1.13-2.524 1.488-4.437 1.577-2.553.118-10.194.118-12.748 0-1.913-.089-3.308-.447-4.437-1.577-1.13-1.129-1.488-2.524-1.577-4.437-.118-2.553-.118-10.194 0-12.748.089-1.913.447-3.308 1.577-4.437 1.129-1.13 2.524-1.488 4.437-1.577 2.553-.118 10.194-.118 12.748 0 1.913.089 3.308.447 4.437 1.577 1.13 1.129 1.488 2.524 1.577 4.437.118 2.553.118 10.194 0 12.748-.089 1.913-.447 3.308-1.577 4.437z"/></svg></a>
+</div>
+<div class="coh-cell">
+<img src="assets/logo/ather.png" alt="Ather logo">
+<div class="coh-cell-meta">
+<h4 class="coh-name">Ather</h4>
+<p class="coh-desc">Electric mobility startup building clean, smart and connected transport for modern cities — from two-wheelers to software powering them.</p>
+</div>
+<a class="coh-ig" href="#" target="_blank" rel="noopener" aria-label="Ather on Instagram"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"/><circle cx="18.636" cy="5.364" r="1.08"/><path d="M23.957 8.529c-.114-2.529-.623-4.757-2.457-6.591-1.834-1.833-4.061-2.342-6.591-2.457-2.614-.121-10.457-.121-13.072 0-2.529.114-4.757.623-6.591 2.457-1.833 1.834-2.342 4.061-2.457 6.591-.121 2.614-.121 10.457 0 13.072.114 2.529.623 4.757 2.457 6.591 1.834 1.833 4.061 2.342 6.591 2.457 2.614.121 10.457.121 13.072 0 2.529-.114 4.757-.623 6.591-2.457 1.833-1.834 2.342-4.061 2.457-6.591.121-2.614.121-10.457 0-13.072zm-2.146 12.825c-1.129 1.13-2.524 1.488-4.437 1.577-2.553.118-10.194.118-12.748 0-1.913-.089-3.308-.447-4.437-1.577-1.13-1.129-1.488-2.524-1.577-4.437-.118-2.553-.118-10.194 0-12.748.089-1.913.447-3.308 1.577-4.437 1.129-1.13 2.524-1.488 4.437-1.577 2.553-.118 10.194-.118 12.748 0 1.913.089 3.308.447 4.437 1.577 1.13 1.129 1.488 2.524 1.577 4.437.118 2.553.118 10.194 0 12.748-.089 1.913-.447 3.308-1.577 4.437z"/></svg></a>
+</div>
+<div class="coh-cell">
+<img src="assets/logo/Yarsa Logo 1.png" alt="Yarsa logo">
+<div class="coh-cell-meta">
+<h4 class="coh-name">Yarsa</h4>
+<p class="coh-desc">Software and design studio crafting digital products end to end — research, build, launch and scale — for teams that move fast.</p>
+</div>
+<a class="coh-ig" href="#" target="_blank" rel="noopener" aria-label="Yarsa on Instagram"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"/><circle cx="18.636" cy="5.364" r="1.08"/><path d="M23.957 8.529c-.114-2.529-.623-4.757-2.457-6.591-1.834-1.833-4.061-2.342-6.591-2.457-2.614-.121-10.457-.121-13.072 0-2.529.114-4.757.623-6.591 2.457-1.833 1.834-2.342 4.061-2.457 6.591-.121 2.614-.121 10.457 0 13.072.114 2.529.623 4.757 2.457 6.591 1.834 1.833 4.061 2.342 6.591 2.457 2.614.121 10.457.121 13.072 0 2.529-.114 4.757-.623 6.591-2.457 1.833-1.834 2.342-4.061 2.457-6.591.121-2.614.121-10.457 0-13.072zm-2.146 12.825c-1.129 1.13-2.524 1.488-4.437 1.577-2.553.118-10.194.118-12.748 0-1.913-.089-3.308-.447-4.437-1.577-1.13-1.129-1.488-2.524-1.577-4.437-.118-2.553-.118-10.194 0-12.748.089-1.913.447-3.308 1.577-4.437 1.129-1.13 2.524-1.488 4.437-1.577 2.553-.118 10.194-.118 12.748 0 1.913.089 3.308.447 4.437 1.577 1.13 1.129 1.488 2.524 1.577 4.437.118 2.553.118 10.194 0 12.748-.089 1.913-.447 3.308-1.577 4.437z"/></svg></a>
+</div>
+<div class="coh-cell">
+<img src="assets/logo/eSahara_Nepal - Baibhav Shrestha 1.png" alt="eSahara logo">
+<div class="coh-cell-meta">
+<h4 class="coh-name">eSahara</h4>
+<p class="coh-desc">Fintech venture reimagining payments and financial access for underserved communities through simple, secure and smart tools.</p>
+</div>
+<a class="coh-ig" href="#" target="_blank" rel="noopener" aria-label="eSahara on Instagram"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"/><circle cx="18.636" cy="5.364" r="1.08"/><path d="M23.957 8.529c-.114-2.529-.623-4.757-2.457-6.591-1.834-1.833-4.061-2.342-6.591-2.457-2.614-.121-10.457-.121-13.072 0-2.529.114-4.757.623-6.591 2.457-1.833 1.834-2.342 4.061-2.457 6.591-.121 2.614-.121 10.457 0 13.072.114 2.529.623 4.757 2.457 6.591 1.834 1.833 4.061 2.342 6.591 2.457 2.614.121 10.457.121 13.072 0 2.529-.114 4.757-.623 6.591-2.457 1.833-1.834 2.342-4.061 2.457-6.591.121-2.614.121-10.457 0-13.072zm-2.146 12.825c-1.129 1.13-2.524 1.488-4.437 1.577-2.553.118-10.194.118-12.748 0-1.913-.089-3.308-.447-4.437-1.577-1.13-1.129-1.488-2.524-1.577-4.437-.118-2.553-.118-10.194 0-12.748.089-1.913.447-3.308 1.577-4.437 1.129-1.13 2.524-1.488 4.437-1.577 2.553-.118 10.194-.118 12.748 0 1.913.089 3.308.447 4.437 1.577 1.13 1.129 1.488 2.524 1.577 4.437.118 2.553.118 10.194 0 12.748-.089 1.913-.447 3.308-1.577 4.437z"/></svg></a>
+</div>
+</div>
+<div class="coh-info">
+<p class="coh-sub">Six startups, one cohort — building for Nepal's tomorrow.</p>
+<a class="coh-insta" href="#" target="_blank" rel="noopener" aria-label="Cohort II on Instagram">
+<svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"/><circle cx="18.636" cy="5.364" r="1.08"/><path d="M23.957 8.529c-.114-2.529-.623-4.757-2.457-6.591-1.834-1.833-4.061-2.342-6.591-2.457-2.614-.121-10.457-.121-13.072 0-2.529.114-4.757.623-6.591 2.457-1.833 1.834-2.342 4.061-2.457 6.591-.121 2.614-.121 10.457 0 13.072.114 2.529.623 4.757 2.457 6.591 1.834 1.833 4.061 2.342 6.591 2.457 2.614.121 10.457.121 13.072 0 2.529-.114 4.757-.623 6.591-2.457 1.833-1.834 2.342-4.061 2.457-6.591.121-2.614.121-10.457 0-13.072zm-2.146 12.825c-1.129 1.13-2.524 1.488-4.437 1.577-2.553.118-10.194.118-12.748 0-1.913-.089-3.308-.447-4.437-1.577-1.13-1.129-1.488-2.524-1.577-4.437-.118-2.553-.118-10.194 0-12.748.089-1.913.447-3.308 1.577-4.437 1.129-1.13 2.524-1.488 4.437-1.577 2.553-.118 10.194-.118 12.748 0 1.913.089 3.308.447 4.437 1.577 1.13 1.129 1.488 2.524 1.577 4.437.118 2.553.118 10.194 0 12.748-.089 1.913-.447 3.308-1.577 4.437z"/></svg>
+Instagram
+</a>
+</div>
+</div>
+</article>
+</div>
+
+<div class="coh-slot">
+<article class="coh-card">
+<header class="coh-head"><span>Cohort III</span></header>
+<div class="coh-body">
+<div class="coh-logos">
+<div class="coh-cell">
+<img src="assets/logo/samparka.png" alt="Samparka logo">
+<div class="coh-cell-meta">
+<h4 class="coh-name">Samparka</h4>
+<p class="coh-desc">Connectivity platform helping communities, teams and marketplaces stay linked, informed and always a message away.</p>
+</div>
+<a class="coh-ig" href="#" target="_blank" rel="noopener" aria-label="Samparka on Instagram"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"/><circle cx="18.636" cy="5.364" r="1.08"/><path d="M23.957 8.529c-.114-2.529-.623-4.757-2.457-6.591-1.834-1.833-4.061-2.342-6.591-2.457-2.614-.121-10.457-.121-13.072 0-2.529.114-4.757.623-6.591 2.457-1.833 1.834-2.342 4.061-2.457 6.591-.121 2.614-.121 10.457 0 13.072.114 2.529.623 4.757 2.457 6.591 1.834 1.833 4.061 2.342 6.591 2.457 2.614.121 10.457.121 13.072 0 2.529-.114 4.757-.623 6.591-2.457 1.833-1.834 2.342-4.061 2.457-6.591.121-2.614.121-10.457 0-13.072zm-2.146 12.825c-1.129 1.13-2.524 1.488-4.437 1.577-2.553.118-10.194.118-12.748 0-1.913-.089-3.308-.447-4.437-1.577-1.13-1.129-1.488-2.524-1.577-4.437-.118-2.553-.118-10.194 0-12.748.089-1.913.447-3.308 1.577-4.437 1.129-1.13 2.524-1.488 4.437-1.577 2.553-.118 10.194-.118 12.748 0 1.913.089 3.308.447 4.437 1.577 1.13 1.129 1.488 2.524 1.577 4.437.118 2.553.118 10.194 0 12.748-.089 1.913-.447 3.308-1.577 4.437z"/></svg></a>
+</div>
+<div class="coh-cell">
+<img src="assets/logo/studioBrianta.png" alt="Studio Brianta logo">
+<div class="coh-cell-meta">
+<h4 class="coh-name">Studio Brianta</h4>
+<p class="coh-desc">Independent creative studio producing brands, visual identities and campaigns with sharp thinking and craft behind every pixel.</p>
+</div>
+<a class="coh-ig" href="#" target="_blank" rel="noopener" aria-label="Studio Brianta on Instagram"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"/><circle cx="18.636" cy="5.364" r="1.08"/><path d="M23.957 8.529c-.114-2.529-.623-4.757-2.457-6.591-1.834-1.833-4.061-2.342-6.591-2.457-2.614-.121-10.457-.121-13.072 0-2.529.114-4.757.623-6.591 2.457-1.833 1.834-2.342 4.061-2.457 6.591-.121 2.614-.121 10.457 0 13.072.114 2.529.623 4.757 2.457 6.591 1.834 1.833 4.061 2.342 6.591 2.457 2.614.121 10.457.121 13.072 0 2.529-.114 4.757-.623 6.591-2.457 1.833-1.834 2.342-4.061 2.457-6.591.121-2.614.121-10.457 0-13.072zm-2.146 12.825c-1.129 1.13-2.524 1.488-4.437 1.577-2.553.118-10.194.118-12.748 0-1.913-.089-3.308-.447-4.437-1.577-1.13-1.129-1.488-2.524-1.577-4.437-.118-2.553-.118-10.194 0-12.748.089-1.913.447-3.308 1.577-4.437 1.129-1.13 2.524-1.488 4.437-1.577 2.553-.118 10.194-.118 12.748 0 1.913.089 3.308.447 4.437 1.577 1.13 1.129 1.488 2.524 1.577 4.437.118 2.553.118 10.194 0 12.748-.089 1.913-.447 3.308-1.577 4.437z"/></svg></a>
+</div>
+<div class="coh-cell">
+<img src="assets/logo/logo-kapp - Sangam Uprety 1.png" alt="Kapp logo">
+<div class="coh-cell-meta">
+<h4 class="coh-name">Kapp</h4>
+<p class="coh-desc">Healthtech startup making health data simpler, safer and more useful — for patients and the teams who care for them.</p>
+</div>
+<a class="coh-ig" href="#" target="_blank" rel="noopener" aria-label="Kapp on Instagram"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"/><circle cx="18.636" cy="5.364" r="1.08"/><path d="M23.957 8.529c-.114-2.529-.623-4.757-2.457-6.591-1.834-1.833-4.061-2.342-6.591-2.457-2.614-.121-10.457-.121-13.072 0-2.529.114-4.757.623-6.591 2.457-1.833 1.834-2.342 4.061-2.457 6.591-.121 2.614-.121 10.457 0 13.072.114 2.529.623 4.757 2.457 6.591 1.834 1.833 4.061 2.342 6.591 2.457 2.614.121 10.457.121 13.072 0 2.529-.114 4.757-.623 6.591-2.457 1.833-1.834 2.342-4.061 2.457-6.591.121-2.614.121-10.457 0-13.072zm-2.146 12.825c-1.129 1.13-2.524 1.488-4.437 1.577-2.553.118-10.194.118-12.748 0-1.913-.089-3.308-.447-4.437-1.577-1.13-1.129-1.488-2.524-1.577-4.437-.118-2.553-.118-10.194 0-12.748.089-1.913.447-3.308 1.577-4.437 1.129-1.13 2.524-1.488 4.437-1.577 2.553-.118 10.194-.118 12.748 0 1.913.089 3.308.447 4.437 1.577 1.13 1.129 1.488 2.524 1.577 4.437.118 2.553.118 10.194 0 12.748-.089 1.913-.447 3.308-1.577 4.437z"/></svg></a>
+</div>
+<div class="coh-cell">
+<img src="assets/logo/Mr.Waffles logo-01 1.png" alt="Mr. Waffles logo">
+<div class="coh-cell-meta">
+<h4 class="coh-name">Mr. Waffles</h4>
+<p class="coh-desc">Food and beverage brand serving original waffle creations, desserts and drinks with a vibe worth sharing every single day.</p>
+</div>
+<a class="coh-ig" href="#" target="_blank" rel="noopener" aria-label="Mr. Waffles on Instagram"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"/><circle cx="18.636" cy="5.364" r="1.08"/><path d="M23.957 8.529c-.114-2.529-.623-4.757-2.457-6.591-1.834-1.833-4.061-2.342-6.591-2.457-2.614-.121-10.457-.121-13.072 0-2.529.114-4.757.623-6.591 2.457-1.833 1.834-2.342 4.061-2.457 6.591-.121 2.614-.121 10.457 0 13.072.114 2.529.623 4.757 2.457 6.591 1.834 1.833 4.061 2.342 6.591 2.457 2.614.121 10.457.121 13.072 0 2.529-.114 4.757-.623 6.591-2.457 1.833-1.834 2.342-4.061 2.457-6.591.121-2.614.121-10.457 0-13.072zm-2.146 12.825c-1.129 1.13-2.524 1.488-4.437 1.577-2.553.118-10.194.118-12.748 0-1.913-.089-3.308-.447-4.437-1.577-1.13-1.129-1.488-2.524-1.577-4.437-.118-2.553-.118-10.194 0-12.748.089-1.913.447-3.308 1.577-4.437 1.129-1.13 2.524-1.488 4.437-1.577 2.553-.118 10.194-.118 12.748 0 1.913.089 3.308.447 4.437 1.577 1.13 1.129 1.488 2.524 1.577 4.437.118 2.553.118 10.194 0 12.748-.089 1.913-.447 3.308-1.577 4.437z"/></svg></a>
+</div>
+<div class="coh-cell">
+<img src="assets/logo/IK.png" alt="IK logo">
+<div class="coh-cell-meta">
+<h4 class="coh-name">IK</h4>
+<p class="coh-desc">Consumer app startup designing fast, intuitive products that quietly make everyday life easier and a little more delightful.</p>
+</div>
+<a class="coh-ig" href="#" target="_blank" rel="noopener" aria-label="IK on Instagram"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"/><circle cx="18.636" cy="5.364" r="1.08"/><path d="M23.957 8.529c-.114-2.529-.623-4.757-2.457-6.591-1.834-1.833-4.061-2.342-6.591-2.457-2.614-.121-10.457-.121-13.072 0-2.529.114-4.757.623-6.591 2.457-1.833 1.834-2.342 4.061-2.457 6.591-.121 2.614-.121 10.457 0 13.072.114 2.529.623 4.757 2.457 6.591 1.834 1.833 4.061 2.342 6.591 2.457 2.614.121 10.457.121 13.072 0 2.529-.114 4.757-.623 6.591-2.457 1.833-1.834 2.342-4.061 2.457-6.591.121-2.614.121-10.457 0-13.072zm-2.146 12.825c-1.129 1.13-2.524 1.488-4.437 1.577-2.553.118-10.194.118-12.748 0-1.913-.089-3.308-.447-4.437-1.577-1.13-1.129-1.488-2.524-1.577-4.437-.118-2.553-.118-10.194 0-12.748.089-1.913.447-3.308 1.577-4.437 1.129-1.13 2.524-1.488 4.437-1.577 2.553-.118 10.194-.118 12.748 0 1.913.089 3.308.447 4.437 1.577 1.13 1.129 1.488 2.524 1.577 4.437.118 2.553.118 10.194 0 12.748-.089 1.913-.447 3.308-1.577 4.437z"/></svg></a>
+</div>
+<div class="coh-cell">
+<img src="assets/logo/3 half-transparent 1.png" alt="Brand logo">
+<div class="coh-cell-meta">
+<h4 class="coh-name">Brand</h4>
+<p class="coh-desc">Lifestyle brand built around identity and culture — apparel and products that speak for the community that wears them.</p>
+</div>
+<a class="coh-ig" href="#" target="_blank" rel="noopener" aria-label="Brand on Instagram"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"/><circle cx="18.636" cy="5.364" r="1.08"/><path d="M23.957 8.529c-.114-2.529-.623-4.757-2.457-6.591-1.834-1.833-4.061-2.342-6.591-2.457-2.614-.121-10.457-.121-13.072 0-2.529.114-4.757.623-6.591 2.457-1.833 1.834-2.342 4.061-2.457 6.591-.121 2.614-.121 10.457 0 13.072.114 2.529.623 4.757 2.457 6.591 1.834 1.833 4.061 2.342 6.591 2.457 2.614.121 10.457.121 13.072 0 2.529-.114 4.757-.623 6.591-2.457 1.833-1.834 2.342-4.061 2.457-6.591.121-2.614.121-10.457 0-13.072zm-2.146 12.825c-1.129 1.13-2.524 1.488-4.437 1.577-2.553.118-10.194.118-12.748 0-1.913-.089-3.308-.447-4.437-1.577-1.13-1.129-1.488-2.524-1.577-4.437-.118-2.553-.118-10.194 0-12.748.089-1.913.447-3.308 1.577-4.437 1.129-1.13 2.524-1.488 4.437-1.577 2.553-.118 10.194-.118 12.748 0 1.913.089 3.308.447 4.437 1.577 1.13 1.129 1.488 2.524 1.577 4.437.118 2.553.118 10.194 0 12.748-.089 1.913-.447 3.308-1.577 4.437z"/></svg></a>
+</div>
+</div>
+<div class="coh-info">
+<p class="coh-sub">Six startups, one cohort — building for Nepal's tomorrow.</p>
+<a class="coh-insta" href="#" target="_blank" rel="noopener" aria-label="Cohort III on Instagram">
+<svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"/><circle cx="18.636" cy="5.364" r="1.08"/><path d="M23.957 8.529c-.114-2.529-.623-4.757-2.457-6.591-1.834-1.833-4.061-2.342-6.591-2.457-2.614-.121-10.457-.121-13.072 0-2.529.114-4.757.623-6.591 2.457-1.833 1.834-2.342 4.061-2.457 6.591-.121 2.614-.121 10.457 0 13.072.114 2.529.623 4.757 2.457 6.591 1.834 1.833 4.061 2.342 6.591 2.457 2.614.121 10.457.121 13.072 0 2.529-.114 4.757-.623 6.591-2.457 1.833-1.834 2.342-4.061 2.457-6.591.121-2.614.121-10.457 0-13.072zm-2.146 12.825c-1.129 1.13-2.524 1.488-4.437 1.577-2.553.118-10.194.118-12.748 0-1.913-.089-3.308-.447-4.437-1.577-1.13-1.129-1.488-2.524-1.577-4.437-.118-2.553-.118-10.194 0-12.748.089-1.913.447-3.308 1.577-4.437 1.129-1.13 2.524-1.488 4.437-1.577 2.553-.118 10.194-.118 12.748 0 1.913.089 3.308.447 4.437 1.577 1.13 1.129 1.488 2.524 1.577 4.437.118 2.553.118 10.194 0 12.748-.089 1.913-.447 3.308-1.577 4.437z"/></svg>
+Instagram
+</a>
+</div>
+</div>
+</article>
+</div>
+
+<div class="coh-slot">
+<article class="coh-card">
+<header class="coh-head"><span>Cohort IV</span></header>
+<div class="coh-body">
+<div class="coh-logos">
+<div class="coh-cell">
+<img src="assets/logo/eSahara_Nepal - Baibhav Shrestha 1.png" alt="eSahara logo">
+<div class="coh-cell-meta">
+<h4 class="coh-name">eSahara</h4>
+<p class="coh-desc">Fintech venture reimagining payments and financial access for underserved communities through simple, secure and smart tools.</p>
+</div>
+<a class="coh-ig" href="#" target="_blank" rel="noopener" aria-label="eSahara on Instagram"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"/><circle cx="18.636" cy="5.364" r="1.08"/><path d="M23.957 8.529c-.114-2.529-.623-4.757-2.457-6.591-1.834-1.833-4.061-2.342-6.591-2.457-2.614-.121-10.457-.121-13.072 0-2.529.114-4.757.623-6.591 2.457-1.833 1.834-2.342 4.061-2.457 6.591-.121 2.614-.121 10.457 0 13.072.114 2.529.623 4.757 2.457 6.591 1.834 1.833 4.061 2.342 6.591 2.457 2.614.121 10.457.121 13.072 0 2.529-.114 4.757-.623 6.591-2.457 1.833-1.834 2.342-4.061 2.457-6.591.121-2.614.121-10.457 0-13.072zm-2.146 12.825c-1.129 1.13-2.524 1.488-4.437 1.577-2.553.118-10.194.118-12.748 0-1.913-.089-3.308-.447-4.437-1.577-1.13-1.129-1.488-2.524-1.577-4.437-.118-2.553-.118-10.194 0-12.748.089-1.913.447-3.308 1.577-4.437 1.129-1.13 2.524-1.488 4.437-1.577 2.553-.118 10.194-.118 12.748 0 1.913.089 3.308.447 4.437 1.577 1.13 1.129 1.488 2.524 1.577 4.437.118 2.553.118 10.194 0 12.748-.089 1.913-.447 3.308-1.577 4.437z"/></svg></a>
+</div>
+<div class="coh-cell">
+<img src="assets/logo/ather.png" alt="Ather logo">
+<div class="coh-cell-meta">
+<h4 class="coh-name">Ather</h4>
+<p class="coh-desc">Electric mobility startup building clean, smart and connected transport for modern cities — from two-wheelers to software powering them.</p>
+</div>
+<a class="coh-ig" href="#" target="_blank" rel="noopener" aria-label="Ather on Instagram"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"/><circle cx="18.636" cy="5.364" r="1.08"/><path d="M23.957 8.529c-.114-2.529-.623-4.757-2.457-6.591-1.834-1.833-4.061-2.342-6.591-2.457-2.614-.121-10.457-.121-13.072 0-2.529.114-4.757.623-6.591 2.457-1.833 1.834-2.342 4.061-2.457 6.591-.121 2.614-.121 10.457 0 13.072.114 2.529.623 4.757 2.457 6.591 1.834 1.833 4.061 2.342 6.591 2.457 2.614.121 10.457.121 13.072 0 2.529-.114 4.757-.623 6.591-2.457 1.833-1.834 2.342-4.061 2.457-6.591.121-2.614.121-10.457 0-13.072zm-2.146 12.825c-1.129 1.13-2.524 1.488-4.437 1.577-2.553.118-10.194.118-12.748 0-1.913-.089-3.308-.447-4.437-1.577-1.13-1.129-1.488-2.524-1.577-4.437-.118-2.553-.118-10.194 0-12.748.089-1.913.447-3.308 1.577-4.437 1.129-1.13 2.524-1.488 4.437-1.577 2.553-.118 10.194-.118 12.748 0 1.913.089 3.308.447 4.437 1.577 1.13 1.129 1.488 2.524 1.577 4.437.118 2.553.118 10.194 0 12.748-.089 1.913-.447 3.308-1.577 4.437z"/></svg></a>
+</div>
+<div class="coh-cell">
+<img src="assets/logo/Yarsa Logo 1.png" alt="Yarsa logo">
+<div class="coh-cell-meta">
+<h4 class="coh-name">Yarsa</h4>
+<p class="coh-desc">Software and design studio crafting digital products end to end — research, build, launch and scale — for teams that move fast.</p>
+</div>
+<a class="coh-ig" href="#" target="_blank" rel="noopener" aria-label="Yarsa on Instagram"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"/><circle cx="18.636" cy="5.364" r="1.08"/><path d="M23.957 8.529c-.114-2.529-.623-4.757-2.457-6.591-1.834-1.833-4.061-2.342-6.591-2.457-2.614-.121-10.457-.121-13.072 0-2.529.114-4.757.623-6.591 2.457-1.833 1.834-2.342 4.061-2.457 6.591-.121 2.614-.121 10.457 0 13.072.114 2.529.623 4.757 2.457 6.591 1.834 1.833 4.061 2.342 6.591 2.457 2.614.121 10.457.121 13.072 0 2.529-.114 4.757-.623 6.591-2.457 1.833-1.834 2.342-4.061 2.457-6.591.121-2.614.121-10.457 0-13.072zm-2.146 12.825c-1.129 1.13-2.524 1.488-4.437 1.577-2.553.118-10.194.118-12.748 0-1.913-.089-3.308-.447-4.437-1.577-1.13-1.129-1.488-2.524-1.577-4.437-.118-2.553-.118-10.194 0-12.748.089-1.913.447-3.308 1.577-4.437 1.129-1.13 2.524-1.488 4.437-1.577 2.553-.118 10.194-.118 12.748 0 1.913.089 3.308.447 4.437 1.577 1.13 1.129 1.488 2.524 1.577 4.437.118 2.553.118 10.194 0 12.748-.089 1.913-.447 3.308-1.577 4.437z"/></svg></a>
+</div>
+<div class="coh-cell">
+<img src="assets/logo/logo-kapp - Sangam Uprety 1.png" alt="Kapp logo">
+<div class="coh-cell-meta">
+<h4 class="coh-name">Kapp</h4>
+<p class="coh-desc">Healthtech startup making health data simpler, safer and more useful — for patients and the teams who care for them.</p>
+</div>
+<a class="coh-ig" href="#" target="_blank" rel="noopener" aria-label="Kapp on Instagram"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"/><circle cx="18.636" cy="5.364" r="1.08"/><path d="M23.957 8.529c-.114-2.529-.623-4.757-2.457-6.591-1.834-1.833-4.061-2.342-6.591-2.457-2.614-.121-10.457-.121-13.072 0-2.529.114-4.757.623-6.591 2.457-1.833 1.834-2.342 4.061-2.457 6.591-.121 2.614-.121 10.457 0 13.072.114 2.529.623 4.757 2.457 6.591 1.834 1.833 4.061 2.342 6.591 2.457 2.614.121 10.457.121 13.072 0 2.529-.114 4.757-.623 6.591-2.457 1.833-1.834 2.342-4.061 2.457-6.591.121-2.614.121-10.457 0-13.072zm-2.146 12.825c-1.129 1.13-2.524 1.488-4.437 1.577-2.553.118-10.194.118-12.748 0-1.913-.089-3.308-.447-4.437-1.577-1.13-1.129-1.488-2.524-1.577-4.437-.118-2.553-.118-10.194 0-12.748.089-1.913.447-3.308 1.577-4.437 1.129-1.13 2.524-1.488 4.437-1.577 2.553-.118 10.194-.118 12.748 0 1.913.089 3.308.447 4.437 1.577 1.13 1.129 1.488 2.524 1.577 4.437.118 2.553.118 10.194 0 12.748-.089 1.913-.447 3.308-1.577 4.437z"/></svg></a>
+</div>
+<div class="coh-cell">
+<img src="assets/logo/Mr.Waffles logo-01 1.png" alt="Mr. Waffles logo">
+<div class="coh-cell-meta">
+<h4 class="coh-name">Mr. Waffles</h4>
+<p class="coh-desc">Food and beverage brand serving original waffle creations, desserts and drinks with a vibe worth sharing every single day.</p>
+</div>
+<a class="coh-ig" href="#" target="_blank" rel="noopener" aria-label="Mr. Waffles on Instagram"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"/><circle cx="18.636" cy="5.364" r="1.08"/><path d="M23.957 8.529c-.114-2.529-.623-4.757-2.457-6.591-1.834-1.833-4.061-2.342-6.591-2.457-2.614-.121-10.457-.121-13.072 0-2.529.114-4.757.623-6.591 2.457-1.833 1.834-2.342 4.061-2.457 6.591-.121 2.614-.121 10.457 0 13.072.114 2.529.623 4.757 2.457 6.591 1.834 1.833 4.061 2.342 6.591 2.457 2.614.121 10.457.121 13.072 0 2.529-.114 4.757-.623 6.591-2.457 1.833-1.834 2.342-4.061 2.457-6.591.121-2.614.121-10.457 0-13.072zm-2.146 12.825c-1.129 1.13-2.524 1.488-4.437 1.577-2.553.118-10.194.118-12.748 0-1.913-.089-3.308-.447-4.437-1.577-1.13-1.129-1.488-2.524-1.577-4.437-.118-2.553-.118-10.194 0-12.748.089-1.913.447-3.308 1.577-4.437 1.129-1.13 2.524-1.488 4.437-1.577 2.553-.118 10.194-.118 12.748 0 1.913.089 3.308.447 4.437 1.577 1.13 1.129 1.488 2.524 1.577 4.437.118 2.553.118 10.194 0 12.748-.089 1.913-.447 3.308-1.577 4.437z"/></svg></a>
+</div>
+<div class="coh-cell">
+<img src="assets/logo/IK.png" alt="IK logo">
+<div class="coh-cell-meta">
+<h4 class="coh-name">IK</h4>
+<p class="coh-desc">Consumer app startup designing fast, intuitive products that quietly make everyday life easier and a little more delightful.</p>
+</div>
+<a class="coh-ig" href="#" target="_blank" rel="noopener" aria-label="IK on Instagram"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"/><circle cx="18.636" cy="5.364" r="1.08"/><path d="M23.957 8.529c-.114-2.529-.623-4.757-2.457-6.591-1.834-1.833-4.061-2.342-6.591-2.457-2.614-.121-10.457-.121-13.072 0-2.529.114-4.757.623-6.591 2.457-1.833 1.834-2.342 4.061-2.457 6.591-.121 2.614-.121 10.457 0 13.072.114 2.529.623 4.757 2.457 6.591 1.834 1.833 4.061 2.342 6.591 2.457 2.614.121 10.457.121 13.072 0 2.529-.114 4.757-.623 6.591-2.457 1.833-1.834 2.342-4.061 2.457-6.591.121-2.614.121-10.457 0-13.072zm-2.146 12.825c-1.129 1.13-2.524 1.488-4.437 1.577-2.553.118-10.194.118-12.748 0-1.913-.089-3.308-.447-4.437-1.577-1.13-1.129-1.488-2.524-1.577-4.437-.118-2.553-.118-10.194 0-12.748.089-1.913.447-3.308 1.577-4.437 1.129-1.13 2.524-1.488 4.437-1.577 2.553-.118 10.194-.118 12.748 0 1.913.089 3.308.447 4.437 1.577 1.13 1.129 1.488 2.524 1.577 4.437.118 2.553.118 10.194 0 12.748-.089 1.913-.447 3.308-1.577 4.437z"/></svg></a>
+</div>
+</div>
+<div class="coh-info">
+<p class="coh-sub">Six startups, one cohort — building for Nepal's tomorrow.</p>
+<a class="coh-insta" href="#" target="_blank" rel="noopener" aria-label="Cohort IV on Instagram">
+<svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"/><circle cx="18.636" cy="5.364" r="1.08"/><path d="M23.957 8.529c-.114-2.529-.623-4.757-2.457-6.591-1.834-1.833-4.061-2.342-6.591-2.457-2.614-.121-10.457-.121-13.072 0-2.529.114-4.757.623-6.591 2.457-1.833 1.834-2.342 4.061-2.457 6.591-.121 2.614-.121 10.457 0 13.072.114 2.529.623 4.757 2.457 6.591 1.834 1.833 4.061 2.342 6.591 2.457 2.614.121 10.457.121 13.072 0 2.529-.114 4.757-.623 6.591-2.457 1.833-1.834 2.342-4.061 2.457-6.591.121-2.614.121-10.457 0-13.072zm-2.146 12.825c-1.129 1.13-2.524 1.488-4.437 1.577-2.553.118-10.194.118-12.748 0-1.913-.089-3.308-.447-4.437-1.577-1.13-1.129-1.488-2.524-1.577-4.437-.118-2.553-.118-10.194 0-12.748.089-1.913.447-3.308 1.577-4.437 1.129-1.13 2.524-1.488 4.437-1.577 2.553-.118 10.194-.118 12.748 0 1.913.089 3.308.447 4.437 1.577 1.13 1.129 1.488 2.524 1.577 4.437.118 2.553.118 10.194 0 12.748-.089 1.913-.447 3.308-1.577 4.437z"/></svg>
+Instagram
+</a>
+</div>
+</div>
+</article>
+</div>
+
+<div class="coh-slot">
+<article class="coh-card">
+<header class="coh-head"><span>Cohort V</span></header>
+<div class="coh-body">
+<div class="coh-logos">
+<div class="coh-cell">
+<img src="assets/logo/3 half-transparent 1.png" alt="Brand logo">
+<div class="coh-cell-meta">
+<h4 class="coh-name">Brand</h4>
+<p class="coh-desc">Lifestyle brand built around identity and culture — apparel and products that speak for the community that wears them.</p>
+</div>
+<a class="coh-ig" href="#" target="_blank" rel="noopener" aria-label="Brand on Instagram"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"/><circle cx="18.636" cy="5.364" r="1.08"/><path d="M23.957 8.529c-.114-2.529-.623-4.757-2.457-6.591-1.834-1.833-4.061-2.342-6.591-2.457-2.614-.121-10.457-.121-13.072 0-2.529.114-4.757.623-6.591 2.457-1.833 1.834-2.342 4.061-2.457 6.591-.121 2.614-.121 10.457 0 13.072.114 2.529.623 4.757 2.457 6.591 1.834 1.833 4.061 2.342 6.591 2.457 2.614.121 10.457.121 13.072 0 2.529-.114 4.757-.623 6.591-2.457 1.833-1.834 2.342-4.061 2.457-6.591.121-2.614.121-10.457 0-13.072zm-2.146 12.825c-1.129 1.13-2.524 1.488-4.437 1.577-2.553.118-10.194.118-12.748 0-1.913-.089-3.308-.447-4.437-1.577-1.13-1.129-1.488-2.524-1.577-4.437-.118-2.553-.118-10.194 0-12.748.089-1.913.447-3.308 1.577-4.437 1.129-1.13 2.524-1.488 4.437-1.577 2.553-.118 10.194-.118 12.748 0 1.913.089 3.308.447 4.437 1.577 1.13 1.129 1.488 2.524 1.577 4.437.118 2.553.118 10.194 0 12.748-.089 1.913-.447 3.308-1.577 4.437z"/></svg></a>
+</div>
+<div class="coh-cell">
+<img src="assets/logo/studioBrianta.png" alt="Studio Brianta logo">
+<div class="coh-cell-meta">
+<h4 class="coh-name">Studio Brianta</h4>
+<p class="coh-desc">Independent creative studio producing brands, visual identities and campaigns with sharp thinking and craft behind every pixel.</p>
+</div>
+<a class="coh-ig" href="#" target="_blank" rel="noopener" aria-label="Studio Brianta on Instagram"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"/><circle cx="18.636" cy="5.364" r="1.08"/><path d="M23.957 8.529c-.114-2.529-.623-4.757-2.457-6.591-1.834-1.833-4.061-2.342-6.591-2.457-2.614-.121-10.457-.121-13.072 0-2.529.114-4.757.623-6.591 2.457-1.833 1.834-2.342 4.061-2.457 6.591-.121 2.614-.121 10.457 0 13.072.114 2.529.623 4.757 2.457 6.591 1.834 1.833 4.061 2.342 6.591 2.457 2.614.121 10.457.121 13.072 0 2.529-.114 4.757-.623 6.591-2.457 1.833-1.834 2.342-4.061 2.457-6.591.121-2.614.121-10.457 0-13.072zm-2.146 12.825c-1.129 1.13-2.524 1.488-4.437 1.577-2.553.118-10.194.118-12.748 0-1.913-.089-3.308-.447-4.437-1.577-1.13-1.129-1.488-2.524-1.577-4.437-.118-2.553-.118-10.194 0-12.748.089-1.913.447-3.308 1.577-4.437 1.129-1.13 2.524-1.488 4.437-1.577 2.553-.118 10.194-.118 12.748 0 1.913.089 3.308.447 4.437 1.577 1.13 1.129 1.488 2.524 1.577 4.437.118 2.553.118 10.194 0 12.748-.089 1.913-.447 3.308-1.577 4.437z"/></svg></a>
+</div>
+<div class="coh-cell">
+<img src="assets/logo/samparka.png" alt="Samparka logo">
+<div class="coh-cell-meta">
+<h4 class="coh-name">Samparka</h4>
+<p class="coh-desc">Connectivity platform helping communities, teams and marketplaces stay linked, informed and always a message away.</p>
+</div>
+<a class="coh-ig" href="#" target="_blank" rel="noopener" aria-label="Samparka on Instagram"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"/><circle cx="18.636" cy="5.364" r="1.08"/><path d="M23.957 8.529c-.114-2.529-.623-4.757-2.457-6.591-1.834-1.833-4.061-2.342-6.591-2.457-2.614-.121-10.457-.121-13.072 0-2.529.114-4.757.623-6.591 2.457-1.833 1.834-2.342 4.061-2.457 6.591-.121 2.614-.121 10.457 0 13.072.114 2.529.623 4.757 2.457 6.591 1.834 1.833 4.061 2.342 6.591 2.457 2.614.121 10.457.121 13.072 0 2.529-.114 4.757-.623 6.591-2.457 1.833-1.834 2.342-4.061 2.457-6.591.121-2.614.121-10.457 0-13.072zm-2.146 12.825c-1.129 1.13-2.524 1.488-4.437 1.577-2.553.118-10.194.118-12.748 0-1.913-.089-3.308-.447-4.437-1.577-1.13-1.129-1.488-2.524-1.577-4.437-.118-2.553-.118-10.194 0-12.748.089-1.913.447-3.308 1.577-4.437 1.129-1.13 2.524-1.488 4.437-1.577 2.553-.118 10.194-.118 12.748 0 1.913.089 3.308.447 4.437 1.577 1.13 1.129 1.488 2.524 1.577 4.437.118 2.553.118 10.194 0 12.748-.089 1.913-.447 3.308-1.577 4.437z"/></svg></a>
+</div>
+<div class="coh-cell">
+<img src="assets/logo/ather.png" alt="Ather logo">
+<div class="coh-cell-meta">
+<h4 class="coh-name">Ather</h4>
+<p class="coh-desc">Electric mobility startup building clean, smart and connected transport for modern cities — from two-wheelers to software powering them.</p>
+</div>
+<a class="coh-ig" href="#" target="_blank" rel="noopener" aria-label="Ather on Instagram"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"/><circle cx="18.636" cy="5.364" r="1.08"/><path d="M23.957 8.529c-.114-2.529-.623-4.757-2.457-6.591-1.834-1.833-4.061-2.342-6.591-2.457-2.614-.121-10.457-.121-13.072 0-2.529.114-4.757.623-6.591 2.457-1.833 1.834-2.342 4.061-2.457 6.591-.121 2.614-.121 10.457 0 13.072.114 2.529.623 4.757 2.457 6.591 1.834 1.833 4.061 2.342 6.591 2.457 2.614.121 10.457.121 13.072 0 2.529-.114 4.757-.623 6.591-2.457 1.833-1.834 2.342-4.061 2.457-6.591.121-2.614.121-10.457 0-13.072zm-2.146 12.825c-1.129 1.13-2.524 1.488-4.437 1.577-2.553.118-10.194.118-12.748 0-1.913-.089-3.308-.447-4.437-1.577-1.13-1.129-1.488-2.524-1.577-4.437-.118-2.553-.118-10.194 0-12.748.089-1.913.447-3.308 1.577-4.437 1.129-1.13 2.524-1.488 4.437-1.577 2.553-.118 10.194-.118 12.748 0 1.913.089 3.308.447 4.437 1.577 1.13 1.129 1.488 2.524 1.577 4.437.118 2.553.118 10.194 0 12.748-.089 1.913-.447 3.308-1.577 4.437z"/></svg></a>
+</div>
+<div class="coh-cell">
+<img src="assets/logo/Yarsa Logo 1.png" alt="Yarsa logo">
+<div class="coh-cell-meta">
+<h4 class="coh-name">Yarsa</h4>
+<p class="coh-desc">Software and design studio crafting digital products end to end — research, build, launch and scale — for teams that move fast.</p>
+</div>
+<a class="coh-ig" href="#" target="_blank" rel="noopener" aria-label="Yarsa on Instagram"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"/><circle cx="18.636" cy="5.364" r="1.08"/><path d="M23.957 8.529c-.114-2.529-.623-4.757-2.457-6.591-1.834-1.833-4.061-2.342-6.591-2.457-2.614-.121-10.457-.121-13.072 0-2.529.114-4.757.623-6.591 2.457-1.833 1.834-2.342 4.061-2.457 6.591-.121 2.614-.121 10.457 0 13.072.114 2.529.623 4.757 2.457 6.591 1.834 1.833 4.061 2.342 6.591 2.457 2.614.121 10.457.121 13.072 0 2.529-.114 4.757-.623 6.591-2.457 1.833-1.834 2.342-4.061 2.457-6.591.121-2.614.121-10.457 0-13.072zm-2.146 12.825c-1.129 1.13-2.524 1.488-4.437 1.577-2.553.118-10.194.118-12.748 0-1.913-.089-3.308-.447-4.437-1.577-1.13-1.129-1.488-2.524-1.577-4.437-.118-2.553-.118-10.194 0-12.748.089-1.913.447-3.308 1.577-4.437 1.129-1.13 2.524-1.488 4.437-1.577 2.553-.118 10.194-.118 12.748 0 1.913.089 3.308.447 4.437 1.577 1.13 1.129 1.488 2.524 1.577 4.437.118 2.553.118 10.194 0 12.748-.089 1.913-.447 3.308-1.577 4.437z"/></svg></a>
+</div>
+<div class="coh-cell">
+<img src="assets/logo/logo-kapp - Sangam Uprety 1.png" alt="Kapp logo">
+<div class="coh-cell-meta">
+<h4 class="coh-name">Kapp</h4>
+<p class="coh-desc">Healthtech startup making health data simpler, safer and more useful — for patients and the teams who care for them.</p>
+</div>
+<a class="coh-ig" href="#" target="_blank" rel="noopener" aria-label="Kapp on Instagram"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"/><circle cx="18.636" cy="5.364" r="1.08"/><path d="M23.957 8.529c-.114-2.529-.623-4.757-2.457-6.591-1.834-1.833-4.061-2.342-6.591-2.457-2.614-.121-10.457-.121-13.072 0-2.529.114-4.757.623-6.591 2.457-1.833 1.834-2.342 4.061-2.457 6.591-.121 2.614-.121 10.457 0 13.072.114 2.529.623 4.757 2.457 6.591 1.834 1.833 4.061 2.342 6.591 2.457 2.614.121 10.457.121 13.072 0 2.529-.114 4.757-.623 6.591-2.457 1.833-1.834 2.342-4.061 2.457-6.591.121-2.614.121-10.457 0-13.072zm-2.146 12.825c-1.129 1.13-2.524 1.488-4.437 1.577-2.553.118-10.194.118-12.748 0-1.913-.089-3.308-.447-4.437-1.577-1.13-1.129-1.488-2.524-1.577-4.437-.118-2.553-.118-10.194 0-12.748.089-1.913.447-3.308 1.577-4.437 1.129-1.13 2.524-1.488 4.437-1.577 2.553-.118 10.194-.118 12.748 0 1.913.089 3.308.447 4.437 1.577 1.13 1.129 1.488 2.524 1.577 4.437.118 2.553.118 10.194 0 12.748-.089 1.913-.447 3.308-1.577 4.437z"/></svg></a>
+</div>
+</div>
+<div class="coh-info">
+<p class="coh-sub">Six startups, one cohort — building for Nepal's tomorrow.</p>
+<a class="coh-insta" href="#" target="_blank" rel="noopener" aria-label="Cohort V on Instagram">
+<svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"/><circle cx="18.636" cy="5.364" r="1.08"/><path d="M23.957 8.529c-.114-2.529-.623-4.757-2.457-6.591-1.834-1.833-4.061-2.342-6.591-2.457-2.614-.121-10.457-.121-13.072 0-2.529.114-4.757.623-6.591 2.457-1.833 1.834-2.342 4.061-2.457 6.591-.121 2.614-.121 10.457 0 13.072.114 2.529.623 4.757 2.457 6.591 1.834 1.833 4.061 2.342 6.591 2.457 2.614.121 10.457.121 13.072 0 2.529-.114 4.757-.623 6.591-2.457 1.833-1.834 2.342-4.061 2.457-6.591.121-2.614.121-10.457 0-13.072zm-2.146 12.825c-1.129 1.13-2.524 1.488-4.437 1.577-2.553.118-10.194.118-12.748 0-1.913-.089-3.308-.447-4.437-1.577-1.13-1.129-1.488-2.524-1.577-4.437-.118-2.553-.118-10.194 0-12.748.089-1.913.447-3.308 1.577-4.437 1.129-1.13 2.524-1.488 4.437-1.577 2.553-.118 10.194-.118 12.748 0 1.913.089 3.308.447 4.437 1.577 1.13 1.129 1.488 2.524 1.577 4.437.118 2.553.118 10.194 0 12.748-.089 1.913-.447 3.308-1.577 4.437z"/></svg>
+Instagram
+</a>
+</div>
+</div>
+</article>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<footer class="bg-stone-950 text-stone-400 py-8 px-4 text-xs">
+<div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+<div>
+<span class="text-white font-bold font-condensed text-base tracking-wider">OTHARO</span>
+<span class="text-stone-500 ml-2">© 2026 King's College Incubation Center. All rights reserved.</span>
+</div>
+<div class="flex items-center gap-6">
+<a href="index.html" class="hover:text-white transition-colors">Home</a>
+<a href="aboutus.html" class="hover:text-white transition-colors">About</a>
+<a href="programs.html" class="hover:text-white transition-colors">Programs</a>
+<a href="incubation.html" class="hover:text-white transition-colors">Incubation</a>
+<a href="apply.html" class="text-[#F2994A] hover:underline">Apply</a>
+</div>
+</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll/bundled/locomotive-scroll.min.js">
+</script>
+<script src="incubation.js">
+</script>
+<script src="cohort.js">
+</script>
+</body>
+</html>

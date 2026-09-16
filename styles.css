@@ -55,7 +55,8 @@
     transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-#main-nav.nav-solid {
+#main-nav.nav-solid,
+#main-nav.menu-open {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -64,7 +65,7 @@
 }
 
 /* Keep the mobile toggle & logo readable over the dark video */
-#main-nav:not(.nav-solid) #mobile-menu-btn {
+#main-nav:not(.nav-solid):not(.menu-open) #mobile-menu-btn {
     color: #ffffff;
 }
 
