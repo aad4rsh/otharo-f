@@ -5,6 +5,15 @@
    in index.html so the Tailwind CDN can read it).
    ========================================================== */
 
+/* Hero video custom cursor */
+.cursor-hero-muted {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='11 5 6 9 2 9 2 15 6 15 11 19 11 5'%3E%3C/polygon%3E%3Cline x1='23' y1='9' x2='17' y2='15'%3E%3C/line%3E%3Cline x1='17' y1='9' x2='23' y2='15'%3E%3C/line%3E%3C/svg%3E") 16 16, pointer;
+}
+
+.cursor-hero-unmuted {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='11 5 6 9 2 9 2 15 6 15 11 19 11 5'%3E%3C/polygon%3E%3Cpath d='M15.54 8.46a5 5 0 0 1 0 7.07'%3E%3C/path%3E%3Cpath d='M19.07 4.93a10 10 0 0 1 0 14.14'%3E%3C/path%3E%3C/svg%3E") 16 16, pointer;
+}
+
 /* ------------------------------------------------------------------
    Typography helpers
    ------------------------------------------------------------------ */
@@ -434,7 +443,7 @@
 .nc-white-orange { background: #fff; border: 1px solid #f3e8d6; }
 .nc-orange        { background: #F2994A; }
 .nc-dark          { background: #1c1c1e; }
-.nc-white-green   { background: #fff; border: 1px solid #d1fae5; }
+.nc-terracotta    { background: #C2410C; }
 
 /* ── Icon badge (circle, top-right) ── */
 .nc-header {
@@ -454,7 +463,7 @@
 }
 .nc-badge-orange          { background: #F2994A; }
 .nc-badge-white-on-orange { background: #fff; }
-.nc-badge-green           { background: #10B981; }
+.nc-badge-white-on-terracotta { background: #fff; }
 
 /* ── Huge stat number ── */
 .nc-stat {
@@ -508,9 +517,9 @@
 .nc-dark .nc-sublabel,
 .nc-dark .nc-desc           { color: #F2994A; }
 
-.nc-white-green .nc-stat,
-.nc-white-green .nc-sublabel,
-.nc-white-green .nc-desc    { color: #10B981; }
+.nc-terracotta .nc-stat,
+.nc-terracotta .nc-sublabel,
+.nc-terracotta .nc-desc      { color: #fff; }
 
 /* Stat-card: reset opacity so old rule doesn't hide these */
 .stat-card { opacity: 0; }

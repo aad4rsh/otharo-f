@@ -54,7 +54,6 @@
     </script>
 
     <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
 
     <!-- Custom styles -->
     <link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri()); ?>/styles.css">
@@ -109,6 +108,7 @@
         <!-- Background Video with Overlay -->
         <div class="absolute inset-0 z-0">
             <video
+                id="hero-video"
                 class="w-full h-full object-cover object-center"
                 autoplay
                 muted
@@ -119,8 +119,9 @@
                 <source src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/Kings Video.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="absolute inset-0 bg-black/60"></div>
-            <div class="absolute inset-0 bg-radial-gradient from-transparent via-black/40 to-black/90"></div>
+            <div id="hero-video-trigger" class="hero-video-trigger absolute inset-0 z-10 cursor-hero-muted"></div>
+            <div class="absolute inset-0 bg-black/60 pointer-events-none"></div>
+            <div class="absolute inset-0 bg-radial-gradient from-transparent via-black/40 to-black/90 pointer-events-none"></div>
         </div>
 
         <!-- Hero Content -->
@@ -471,21 +472,21 @@
         <!-- ============================================== -->
     <!-- 6. POWER UP YOUR POTENTIAL (SCROLL TRIGGER)   -->
     <!-- ============================================== -->
-    <section id=\"offerings\" class=\"power-section border-b border-gray-100\">
-        <div class=\"power-sticky-wrapper\">
+    <section id="offerings" class="power-section border-b border-gray-100">
+        <div class="power-sticky-wrapper">
             
-            <div class=\"power-header\">
-                <span class=\"inline-block text-xs font-bold uppercase tracking-widest text-[#F2994A] mb-3\">Our Pathways</span>
-                <h2 class=\"text-5xl sm:text-6xl lg:text-7xl font-black font-condensed uppercase tracking-normal text-gray-900 leading-[0.95]\">
-                    POWER UP YOUR POTENTIAL, <span class=\"text-[#F2994A]\">COMPLETELY FREE!</span>
+            <div class="power-header">
+                <span class="inline-block text-xs font-bold uppercase tracking-widest text-[#F2994A] mb-3">Our Pathways</span>
+                <h2 class="text-5xl sm:text-6xl lg:text-7xl font-black font-condensed uppercase tracking-normal text-gray-900 leading-[0.95]">
+                    POWER UP YOUR POTENTIAL, <span class="text-[#F2994A]">COMPLETELY FREE!</span>
                 </h2>
-                <p class=\"text-gray-500 mt-3 text-sm sm:text-base max-w-xl mx-auto font-sans leading-relaxed\">
+                <p class="text-gray-500 mt-3 text-sm sm:text-base max-w-xl mx-auto font-sans leading-relaxed">
                     Tailored incubation pathways built to take you from raw whiteboard sketches to revenue-generating companies.
                 </p>
             </div>
 
             <!-- Scroll-Triggered Cards Stage -->
-            <div class=\"power-cards-stage\">
+            <div class="power-cards-stage">
                 <?php
                 $programs_query = new WP_Query(array(
                     'post_type' => 'program',
@@ -512,76 +513,76 @@
                         if (!$alignment || !isset($align_map[$alignment])) { $alignment = 'center'; }
                         $card_class = $align_map[$alignment];
                 ?>
-                <div class=\"power-card-wrap <?php echo esc_attr($card_class); ?>\" id=\"card-<?php echo esc_attr(sanitize_title(get_the_title())); ?>\">
-                    <div class=\"potential-card\">
-                        <div class=\"pc-image-wrapper\">
+                <div class="power-card-wrap <?php echo esc_attr($card_class); ?>" id="card-<?php echo esc_attr(sanitize_title(get_the_title())); ?>">
+                    <div class="potential-card">
+                        <div class="pc-image-wrapper">
                             <?php if ($card_image && isset($card_image['url'])) : ?>
-                                <img src=\"<?php echo esc_url($card_image['url']); ?>\" alt=\"<?php the_title_attribute(); ?>\" class=\"pc-img\" loading=\"eager\" />
+                                <img src="<?php echo esc_url($card_image['url']); ?>" alt="<?php the_title_attribute(); ?>" class="pc-img" loading="eager" />
                             <?php elseif (has_post_thumbnail()) : ?>
                                 <?php the_post_thumbnail('large', array('class' => 'pc-img', 'loading' => 'eager')); ?>
                             <?php else : ?>
-                                <div class=\"pc-img bg-gradient-to-br from-[#F2994A]/20 to-[#E07A1E]/10\"></div>
+                                <div class="pc-img bg-gradient-to-br from-[#F2994A]/20 to-[#E07A1E]/10"></div>
                             <?php endif; ?>
-                            <div class=\"pc-badge\"><?php echo esc_html($badge); ?></div>
+                            <div class="pc-badge"><?php echo esc_html($badge); ?></div>
                         </div>
-                        <div class=\"pc-content\">
-                            <h3 class=\"pc-title\"><?php the_title(); ?></h3>
-                            <p class=\"pc-desc\"><?php echo esc_html($short_desc ? $short_desc : wp_trim_words(get_the_excerpt() ? get_the_excerpt() : wp_strip_all_tags(get_the_content()), 30)); ?></p>
+                        <div class="pc-content">
+                            <h3 class="pc-title"><?php the_title(); ?></h3>
+                            <p class="pc-desc"><?php echo esc_html($short_desc ? $short_desc : wp_trim_words(get_the_excerpt() ? get_the_excerpt() : wp_strip_all_tags(get_the_content()), 30)); ?></p>
                         </div>
-                        <div class=\"pc-actions\">
-                            <a href=\"<?php echo esc_url($primary_url); ?>\" class=\"pc-action pc-action-primary\"><?php echo esc_html($primary_text); ?></a>
-                            <a href=\"<?php echo esc_url($secondary_url); ?>\" class=\"pc-action pc-action-ghost\"><?php echo esc_html($secondary_text); ?></a>
+                        <div class="pc-actions">
+                            <a href="<?php echo esc_url($primary_url); ?>" class="pc-action pc-action-primary"><?php echo esc_html($primary_text); ?></a>
+                            <a href="<?php echo esc_url($secondary_url); ?>" class="pc-action pc-action-ghost"><?php echo esc_html($secondary_text); ?></a>
                         </div>
                     </div>
                 </div>
                 <?php endwhile; wp_reset_postdata(); else : ?>
-                <div class=\"power-card-wrap power-card-left\" id=\"card-innovation\">
-                    <div class=\"potential-card\">
-                        <div class=\"pc-image-wrapper\">
-                            <img src=\"<?php echo esc_url(get_template_directory_uri()); ?>/assets/innovationKitchen.jpg\" alt=\"Innovation Kitchen\" class=\"pc-img\" loading=\"eager\" />
-                            <div class=\"pc-badge\">Open</div>
+                <div class="power-card-wrap power-card-left" id="card-innovation">
+                    <div class="potential-card">
+                        <div class="pc-image-wrapper">
+                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/innovationKitchen.jpg" alt="Innovation Kitchen" class="pc-img" loading="eager" />
+                            <div class="pc-badge">Open</div>
                         </div>
-                        <div class=\"pc-content\">
-                            <h3 class=\"pc-title\">Innovation Kitchen</h3>
-                            <p class=\"pc-desc\">A creative sandbox for King's College students. Bring your raw ideas, and we'll help you refine the product, validate the concept, and provide initial feedback.</p>
+                        <div class="pc-content">
+                            <h3 class="pc-title">Innovation Kitchen</h3>
+                            <p class="pc-desc">A creative sandbox for King's College students. Bring your raw ideas, and we'll help you refine the product, validate the concept, and provide initial feedback.</p>
                         </div>
-                        <div class=\"pc-actions\">
-                            <a href=\"<?php echo home_url('/apply/'); ?>\" class=\"pc-action pc-action-primary\">Apply Now</a>
-                            <a href=\"#faq\" class=\"pc-action pc-action-ghost\">Know More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class=\"power-card-wrap power-card-center\" id=\"card-garage\">
-                    <div class=\"potential-card\">
-                        <div class=\"pc-image-wrapper\">
-                            <img src=\"<?php echo esc_url(get_template_directory_uri()); ?>/assets/startupGarage.jpg\" alt=\"Startup Garage\" class=\"pc-img\" loading=\"eager\" />
-                            <div class=\"pc-badge\">Open</div>
-                        </div>
-                        <div class=\"pc-content\">
-                            <h3 class=\"pc-title\">Startup Garage</h3>
-                            <p class=\"pc-desc\">Can't wait 6 months? Get 1-day end-to-end intensive sessions with mentors right now. Perfect for solving immediate bottlenecks in legal, finance, or product.</p>
-                        </div>
-                        <div class=\"pc-actions\">
-                            <a href=\"<?php echo home_url('/apply/'); ?>\" class=\"pc-action pc-action-primary\">Apply Now</a>
-                            <a href=\"#faq\" class=\"pc-action pc-action-ghost\">Know More</a>
+                        <div class="pc-actions">
+                            <a href="<?php echo home_url('/apply/'); ?>" class="pc-action pc-action-primary">Apply Now</a>
+                            <a href="#faq" class="pc-action pc-action-ghost">Know More</a>
                         </div>
                     </div>
                 </div>
 
-                <div class=\"power-card-wrap power-card-right\" id=\"card-incubation\">
-                    <div class=\"potential-card\">
-                        <div class=\"pc-image-wrapper\">
-                            <img src=\"<?php echo esc_url(get_template_directory_uri()); ?>/assets/otharoIncubation.jpg\" alt=\"Othāro Incubation\" class=\"pc-img\" loading=\"eager\" />
-                            <div class=\"pc-badge\">Open</div>
+                <div class="power-card-wrap power-card-center" id="card-garage">
+                    <div class="potential-card">
+                        <div class="pc-image-wrapper">
+                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/startupGarage.jpg" alt="Startup Garage" class="pc-img" loading="eager" />
+                            <div class="pc-badge">Open</div>
                         </div>
-                        <div class=\"pc-content\">
-                            <h3 class=\"pc-title\">Othāro Incubation</h3>
-                            <p class=\"pc-desc\">Our intense 6-month workshop-based incubation for growth and scalability. Tailored cohorts, 1-on-1 mentorship, seed access, and zero equity taken.</p>
+                        <div class="pc-content">
+                            <h3 class="pc-title">Startup Garage</h3>
+                            <p class="pc-desc">Can't wait 6 months? Get 1-day end-to-end intensive sessions with mentors right now. Perfect for solving immediate bottlenecks in legal, finance, or product.</p>
                         </div>
-                        <div class=\"pc-actions\">
-                            <a href=\"<?php echo home_url('/apply/'); ?>\" class=\"pc-action pc-action-primary\">Apply Now</a>
-                            <a href=\"#faq\" class=\"pc-action pc-action-ghost\">Know More</a>
+                        <div class="pc-actions">
+                            <a href="<?php echo home_url('/apply/'); ?>" class="pc-action pc-action-primary">Apply Now</a>
+                            <a href="#faq" class="pc-action pc-action-ghost">Know More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="power-card-wrap power-card-right" id="card-incubation">
+                    <div class="potential-card">
+                        <div class="pc-image-wrapper">
+                            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/otharoIncubation.jpg" alt="Othāro Incubation" class="pc-img" loading="eager" />
+                            <div class="pc-badge">Open</div>
+                        </div>
+                        <div class="pc-content">
+                            <h3 class="pc-title">Othāro Incubation</h3>
+                            <p class="pc-desc">Our intense 6-month workshop-based incubation for growth and scalability. Tailored cohorts, 1-on-1 mentorship, seed access, and zero equity taken.</p>
+                        </div>
+                        <div class="pc-actions">
+                            <a href="<?php echo home_url('/apply/'); ?>" class="pc-action pc-action-primary">Apply Now</a>
+                            <a href="#faq" class="pc-action pc-action-ghost">Know More</a>
                         </div>
                     </div>
                 </div>
@@ -888,9 +889,8 @@
     <!-- ============================================== -->
     <!-- APPLICATION SCRIPT                             -->
     <!-- ============================================== -->
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll/bundled/locomotive-scroll.min.js"></script>
-    <script src="<?php echo esc_url(get_template_directory_uri()); ?>/script.js"></script>
 </body>
 <?php wp_footer(); ?></body></html>
+
 
 

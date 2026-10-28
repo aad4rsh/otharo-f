@@ -27,7 +27,7 @@ function otharo_enqueue_assets() {
 	// Scripts
 	wp_enqueue_script( 'lucide', 'https://unpkg.com/lucide@latest', array(), null, true );
 	wp_enqueue_script( 'locomotive-scroll', 'https://cdn.jsdelivr.net/npm/locomotive-scroll/bundled/locomotive-scroll.min.js', array(), null, true );
-	wp_enqueue_script( 'otharo-script', get_template_directory_uri() . '/script.js', array(), '1.0.0', true );
+	wp_enqueue_script( 'otharo-script', get_template_directory_uri() . '/script.js', array( 'lucide', 'locomotive-scroll' ), '1.0.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'otharo_enqueue_assets' );
 

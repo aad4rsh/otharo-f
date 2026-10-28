@@ -21,7 +21,38 @@
         initStatsDeal();
         initPowerUpAnimation();
         initApplyModal();
+        initHeroVideoSound();
     });
+
+    /* ------------------------------------------------------------------
+       Hero video sound toggle on cursor hover/click
+       ------------------------------------------------------------------ */
+    function initHeroVideoSound() {
+        const video = document.getElementById('hero-video');
+        const trigger = document.getElementById('hero-video-trigger');
+        if (!video || !trigger) return;
+
+        function updateCursor() {
+            trigger.classList.remove('cursor-hero-muted', 'cursor-hero-unmuted');
+            if (video.muted) {
+                trigger.classList.add('cursor-hero-muted');
+            } else {
+                trigger.classList.add('cursor-hero-unmuted');
+            }
+        }
+
+        updateCursor();
+
+        trigger.addEventListener('click', function () {
+            video.muted = !video.muted;
+            if (!video.muted) {
+                video.play().catch(function () {});
+            }
+            updateCursor();
+        });
+
+        trigger.addEventListener('mouseenter', updateCursor);
+    }
 
     /* ------------------------------------------------------------------
        Locomotive Scroll — smooth scrolling for the whole page.
